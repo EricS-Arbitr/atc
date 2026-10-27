@@ -1,0 +1,16 @@
+# {{ ansible_managed }}
+# The platform assigns the production NIC a /32, so the rest of the subnet is
+# unreachable without an explicit on-link route. Renderer-agnostic (doesn't
+# touch netplan/NM or the mgmt NIC). (common role.)
+[Unit]
+Description=ATC prod-subnet on-link route
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/ip route replace {{ atc_prod_subnet }} dev {{ atc_prod_interface }} scope link
+
+[Install]
+WantedBy=multi-user.target

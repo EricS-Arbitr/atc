@@ -10,6 +10,11 @@ atc_radar_ip:   "172.31.5.10"     # atc-radar   — feed + readsb + tar1090 + FD
 atc_station_ip: "172.31.5.12"     # atc-station — CWP kiosk + display
 atc_weather_ip: "172.31.5.11"     # atc-weather — METAR/TAF feed
 
+# The platform assigns the prod NIC a /32, so the rest of the FCC subnet is
+# unreachable without an explicit on-link route — common installs one.
+atc_prod_interface: "eth1"
+atc_prod_subnet: "172.31.5.0/24"
+
 # --- Install paths ----------------------------------------------------------
 atc_root: "/opt/atc"
 atc_venv: "/opt/atc/venv"         # Python venv for the feed + FDP + weather

@@ -51,6 +51,22 @@
   notify: Restart chrony
   when: manage_chrony | bool
 
+- name: Install the prod-subnet on-link route unit (platform assigns the NIC a /32)
+  ansible.builtin.template:
+    src: atc-prod-route.service.j2
+    dest: /etc/systemd/system/atc-prod-route.service
+    mode: "0644"
+  register: _prodroute
+  when: atc_prod_subnet is defined
+
+- name: Enable + (re)apply the prod-subnet route
+  ansible.builtin.systemd:
+    name: atc-prod-route
+    enabled: true
+    state: "{{ 'restarted' if _prodroute is changed else 'started' }}"
+    daemon_reload: true
+  when: atc_prod_subnet is defined
+
 - name: Create the atc service account
   ansible.builtin.user:
     name: "{{ atc_user }}"
