@@ -36,23 +36,38 @@ def _aircraft():
 OPS_PAGE = """<!doctype html><html><head><meta charset="utf-8">
 <title>Blackstone AUX — ATC</title>
 <style>body{background:#0b0f14;color:#cfe3ff;font:14px monospace;margin:0}
-.wrap{display:flex;height:100vh}.scope,.strips{flex:1;padding:12px;overflow:auto}
-.scope{border-right:1px solid #1d2a3a}h2{color:#6fb3ff}
+.wrap{display:flex;height:100vh}.scope{flex:3;border-right:1px solid #1d2a3a}
+.strips{flex:2;padding:12px;overflow:auto}.scope iframe{width:100%;height:100%;border:0}
+h2{color:#6fb3ff;margin:0 0 8px}
 table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid #1d2a3a;padding:4px;text-align:left}</style>
 </head><body><div class="wrap">
-<div class="scope"><h2>RADAR — {{ af.ident_icao }}</h2>
-<p>tar1090 embeds here (TODO). Field {{ af.lat }},{{ af.lon }} elev {{ af.field_elev_ft }}ft.</p></div>
-<div class="strips"><h2>FLIGHT STRIPS</h2>
-<table><tr><th>Callsign</th><th>Hex</th><th>Alt</th><th>GS</th><th>Squawk</th></tr>
-{% for a in ac %}<tr><td>{{ a.get('flight','') }}</td><td>{{ a.get('hex','') }}</td>
-<td>{{ a.get('alt_baro','') }}</td><td>{{ a.get('gs','') }}</td><td>{{ a.get('squawk','') }}</td></tr>{% endfor %}
-</table></div></div>
-<script>setTimeout(()=>location.reload(),2000)</script></body></html>"""
+<div class="scope">
+{% if tar %}<iframe src="{{ tar }}"></iframe>
+{% else %}<div style="padding:12px"><h2>RADAR — {{ af.ident_icao }}</h2>
+<p>tar1090 URL not configured.</p></div>{% endif %}</div>
+<div class="strips"><h2>FLIGHT STRIPS — {{ af.ident_icao }}</h2>
+<table><thead><tr><th>Callsign</th><th>Hex</th><th>Alt</th><th>GS</th><th>Squawk</th></tr></thead>
+<tbody id="strips"></tbody></table>
+<p id="foot" style="color:#5a7694">loading…</p></div></div>
+<script>
+// Refresh ONLY the strips (not the tar1090 iframe) every 2s.
+async function tick(){
+  try{
+    const ac = await (await fetch('/api/strips')).json();
+    document.getElementById('strips').innerHTML = ac.map(a =>
+      `<tr><td>${a.flight||''}</td><td>${a.hex||''}</td><td>${a.alt_baro||''}</td>`+
+      `<td>${a.gs||''}</td><td>${a.squawk||''}</td></tr>`).join('');
+    document.getElementById('foot').textContent = `updated every 2s · ${ac.length} tracked`;
+  }catch(e){ document.getElementById('foot').textContent = 'feed unreachable'; }
+}
+tick(); setInterval(tick, 2000);
+</script></body></html>"""
 
 
 @app.route("/")
 def ops():
-    return render_template_string(OPS_PAGE, ac=_aircraft(), af=CFG.get("airfield", {}))
+    return render_template_string(OPS_PAGE, af=CFG.get("airfield", {}),
+                                  tar=CFG.get("tar1090_url", ""))
 
 
 @app.route("/api/strips")

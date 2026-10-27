@@ -10,3 +10,9 @@
     name: atc-fdp
     state: restarted
     daemon_reload: true
+
+- name: Restart tar1090
+  ansible.builtin.systemd:
+    name: tar1090
+    state: restarted
+  failed_when: false

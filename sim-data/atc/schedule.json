@@ -1,38 +1,9682 @@
 {
-  "_comment": "Sample 3-flight fixture for Phase-1 bring-up. The real schedule is produced by generate_schedule.py (route templates, ~15-25 movements/day). offset_s is relative to departure_offset_s; both relative to atc_exercise_epoch. icao_hex AE... are synthetic (readsb aircraft-DB lookup disabled).",
-  "flights": [
+ "_generated": {
+  "seed": 20260101,
+  "cycle_s": 172800,
+  "flights": 134
+ },
+ "flights": [
+  {
+   "callsign": "RCH206",
+   "icao_hex": "AE0001",
+   "squawk": "1602",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 0,
+   "waypoints": [
     {
-      "callsign": "RCH481", "icao_hex": "AE1001", "squawk": "1301",
-      "ac_type": "C-17", "category": "heavy", "flight_rule": "inbound",
-      "origin": "KADW", "destination": "KBAX", "heavy": true, "fuel_request_gal": 4800,
-      "departure_offset_s": 0,
-      "waypoints": [
-        {"lat": 38.80, "lon": -78.90, "alt_ft": 9000, "gs_kt": 320, "offset_s": 0,   "on_ground": false},
-        {"lat": 38.60, "lon": -78.65, "alt_ft": 4000, "gs_kt": 230, "offset_s": 300, "on_ground": false},
-        {"lat": 38.50, "lon": -78.50, "alt_ft": 520,  "gs_kt": 0,   "offset_s": 600, "on_ground": true}
-      ]
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
     },
     {
-      "callsign": "N512PA", "icao_hex": "AE1002", "squawk": "1200",
-      "ac_type": "C172", "category": "light", "flight_rule": "local",
-      "origin": "KBAX", "destination": "KBAX", "heavy": false,
-      "departure_offset_s": 120,
-      "waypoints": [
-        {"lat": 38.50, "lon": -78.50, "alt_ft": 520,  "gs_kt": 0,  "offset_s": 0,   "on_ground": true},
-        {"lat": 38.55, "lon": -78.45, "alt_ft": 1500, "gs_kt": 90, "offset_s": 240, "on_ground": false},
-        {"lat": 38.50, "lon": -78.50, "alt_ft": 520,  "gs_kt": 0,  "offset_s": 600, "on_ground": true}
-      ]
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 300,
+     "on_ground": false
     },
     {
-      "callsign": "PAT22", "icao_hex": "AE1003", "squawk": "4455",
-      "ac_type": "KC-135", "category": "heavy", "flight_rule": "outbound",
-      "origin": "KBAX", "destination": "KADW", "heavy": true,
-      "departure_offset_s": 300,
-      "waypoints": [
-        {"lat": 38.50, "lon": -78.50, "alt_ft": 520,  "gs_kt": 0,   "offset_s": 0,   "on_ground": true},
-        {"lat": 38.65, "lon": -78.35, "alt_ft": 6000, "gs_kt": 260, "offset_s": 300, "on_ground": false},
-        {"lat": 38.90, "lon": -78.10, "alt_ft": 15000,"gs_kt": 380, "offset_s": 600, "on_ground": false}
-      ]
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 260,
+     "offset_s": 10800,
+     "on_ground": false
     }
-  ]
+   ]
+  },
+  {
+   "callsign": "RCH669",
+   "icao_hex": "AE0011",
+   "squawk": "1177",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 0,
+   "waypoints": [
+    {
+     "lat": 38.36833,
+     "lon": -77.99488,
+     "alt_ft": 9000,
+     "gs_kt": 290,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.44733,
+     "lon": -78.29795,
+     "alt_ft": 3000,
+     "gs_kt": 230,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 4555
+  },
+  {
+   "callsign": "ARMY98",
+   "icao_hex": "AE0012",
+   "squawk": "4375",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 1784,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N973MC",
+   "icao_hex": "AE0013",
+   "squawk": "6707",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 2553,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY77",
+   "icao_hex": "AE0014",
+   "squawk": "4315",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 4643,
+   "waypoints": [
+    {
+     "lat": 38.85863,
+     "lon": -78.22896,
+     "alt_ft": 9000,
+     "gs_kt": 140,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.64345,
+     "lon": -78.39158,
+     "alt_ft": 3000,
+     "gs_kt": 80,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N474PZ",
+   "icao_hex": "AE0015",
+   "squawk": "1450",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 6067,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "RCH499",
+   "icao_hex": "AE0016",
+   "squawk": "4350",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 7212,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 230,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 330,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4506
+  },
+  {
+   "callsign": "VIPER67",
+   "icao_hex": "AE0017",
+   "squawk": "1015",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 8884,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 200,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 420,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "RCH588",
+   "icao_hex": "AE0018",
+   "squawk": "4024",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 9845,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 170,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 260,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "PAT34",
+   "icao_hex": "AE0019",
+   "squawk": "6605",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 10745,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 9855
+  },
+  {
+   "callsign": "RCH385",
+   "icao_hex": "AE0002",
+   "squawk": "3553",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 10800,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4275
+  },
+  {
+   "callsign": "RCH902",
+   "icao_hex": "AE001A",
+   "squawk": "3714",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 12853,
+   "waypoints": [
+    {
+     "lat": 38.31616,
+     "lon": -78.02222,
+     "alt_ft": 9000,
+     "gs_kt": 290,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.42646,
+     "lon": -78.30889,
+     "alt_ft": 3000,
+     "gs_kt": 230,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 4987
+  },
+  {
+   "callsign": "ARMY58",
+   "icao_hex": "AE001B",
+   "squawk": "1200",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 14662,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 80,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 120,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "PAT05",
+   "icao_hex": "AE001C",
+   "squawk": "3546",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 16738,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 8973
+  },
+  {
+   "callsign": "N218DC",
+   "icao_hex": "AE001D",
+   "squawk": "3515",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 17854,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY89",
+   "icao_hex": "AE001E",
+   "squawk": "1216",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 19908,
+   "waypoints": [
+    {
+     "lat": 38.09171,
+     "lon": -78.39379,
+     "alt_ft": 9000,
+     "gs_kt": 140,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.33668,
+     "lon": -78.45752,
+     "alt_ft": 3000,
+     "gs_kt": 80,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH985",
+   "icao_hex": "AE0003",
+   "squawk": "1325",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 21600,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4800
+  },
+  {
+   "callsign": "N767AE",
+   "icao_hex": "AE001F",
+   "squawk": "2227",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 22036,
+   "waypoints": [
+    {
+     "lat": 38.52962,
+     "lon": -77.96894,
+     "alt_ft": 9000,
+     "gs_kt": 130,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.51185,
+     "lon": -78.28758,
+     "alt_ft": 3000,
+     "gs_kt": 70,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER88",
+   "icao_hex": "AE0020",
+   "squawk": "1200",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 24241,
+   "waypoints": [
+    {
+     "lat": 38.68928,
+     "lon": -78.9743,
+     "alt_ft": 9000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.57571,
+     "lon": -78.68972,
+     "alt_ft": 3000,
+     "gs_kt": 200,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N214AG",
+   "icao_hex": "AE0021",
+   "squawk": "4037",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 25871,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY02",
+   "icao_hex": "AE0022",
+   "squawk": "6020",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 27246,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER71",
+   "icao_hex": "AE0023",
+   "squawk": "4611",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 28965,
+   "waypoints": [
+    {
+     "lat": 38.36437,
+     "lon": -77.99659,
+     "alt_ft": 9000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.44575,
+     "lon": -78.29864,
+     "alt_ft": 3000,
+     "gs_kt": 200,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY09",
+   "icao_hex": "AE0024",
+   "squawk": "2721",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 30420,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 80,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 120,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "RCH232",
+   "icao_hex": "AE0025",
+   "squawk": "5474",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 31717,
+   "waypoints": [
+    {
+     "lat": 38.45923,
+     "lon": -79.02985,
+     "alt_ft": 9000,
+     "gs_kt": 290,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.48369,
+     "lon": -78.71194,
+     "alt_ft": 3000,
+     "gs_kt": 230,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 4476
+  },
+  {
+   "callsign": "RCH691",
+   "icao_hex": "AE0004",
+   "squawk": "4066",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 32400,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 260,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER09",
+   "icao_hex": "AE0026",
+   "squawk": "1200",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 33305,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 200,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 420,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "N805GA",
+   "icao_hex": "AE0027",
+   "squawk": "3155",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 35239,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH699",
+   "icao_hex": "AE0028",
+   "squawk": "6631",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 36473,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 230,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 330,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4137
+  },
+  {
+   "callsign": "ARMY64",
+   "icao_hex": "AE0029",
+   "squawk": "5270",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 38495,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.47651,
+     "lon": -78.51093,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5114,
+     "lon": -78.54002,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N197WK",
+   "icao_hex": "AE002A",
+   "squawk": "5330",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 39650,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY60",
+   "icao_hex": "AE002B",
+   "squawk": "1367",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 41596,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.47651,
+     "lon": -78.51093,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5114,
+     "lon": -78.54002,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER43",
+   "icao_hex": "AE0005",
+   "squawk": "2052",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 43200,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 420,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "RCH752",
+   "icao_hex": "AE002C",
+   "squawk": "5504",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 43811,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 170,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 260,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER33",
+   "icao_hex": "AE002D",
+   "squawk": "5631",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 45143,
+   "waypoints": [
+    {
+     "lat": 38.70599,
+     "lon": -78.9628,
+     "alt_ft": 9000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.58239,
+     "lon": -78.68512,
+     "alt_ft": 3000,
+     "gs_kt": 200,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER52",
+   "icao_hex": "AE002E",
+   "squawk": "4113",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 46502,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 200,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 420,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "N617YK",
+   "icao_hex": "AE002F",
+   "squawk": "1200",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 48670,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY15",
+   "icao_hex": "AE0030",
+   "squawk": "5276",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 50401,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH779",
+   "icao_hex": "AE0031",
+   "squawk": "6100",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 51939,
+   "waypoints": [
+    {
+     "lat": 38.88169,
+     "lon": -78.71354,
+     "alt_ft": 9000,
+     "gs_kt": 290,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65267,
+     "lon": -78.58541,
+     "alt_ft": 3000,
+     "gs_kt": 230,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 4599
+  },
+  {
+   "callsign": "PAT49",
+   "icao_hex": "AE0032",
+   "squawk": "1200",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 52983,
+   "waypoints": [
+    {
+     "lat": 38.90504,
+     "lon": -78.37508,
+     "alt_ft": 9000,
+     "gs_kt": 280,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.66201,
+     "lon": -78.45003,
+     "alt_ft": 3000,
+     "gs_kt": 220,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 9749
+  },
+  {
+   "callsign": "RCH440",
+   "icao_hex": "AE0033",
+   "squawk": "2147",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 53797,
+   "waypoints": [
+    {
+     "lat": 38.19342,
+     "lon": -78.86056,
+     "alt_ft": 9000,
+     "gs_kt": 290,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.37737,
+     "lon": -78.64422,
+     "alt_ft": 3000,
+     "gs_kt": 230,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 4609
+  },
+  {
+   "callsign": "PAT12",
+   "icao_hex": "AE0006",
+   "squawk": "3621",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 54000,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 320,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 9214
+  },
+  {
+   "callsign": "VIPER89",
+   "icao_hex": "AE0034",
+   "squawk": "5440",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 54926,
+   "waypoints": [
+    {
+     "lat": 38.57154,
+     "lon": -79.0245,
+     "alt_ft": 9000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.52862,
+     "lon": -78.7098,
+     "alt_ft": 3000,
+     "gs_kt": 200,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH923",
+   "icao_hex": "AE0035",
+   "squawk": "6463",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 55817,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 230,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 330,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4686
+  },
+  {
+   "callsign": "PAT43",
+   "icao_hex": "AE0036",
+   "squawk": "5517",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 57543,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 8340
+  },
+  {
+   "callsign": "RCH931",
+   "icao_hex": "AE0037",
+   "squawk": "4723",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 59148,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 170,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 260,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY24",
+   "icao_hex": "AE0038",
+   "squawk": "1200",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 60592,
+   "waypoints": [
+    {
+     "lat": 38.88686,
+     "lon": -78.30225,
+     "alt_ft": 9000,
+     "gs_kt": 140,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65474,
+     "lon": -78.4209,
+     "alt_ft": 3000,
+     "gs_kt": 80,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY06",
+   "icao_hex": "AE0039",
+   "squawk": "4555",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 61563,
+   "waypoints": [
+    {
+     "lat": 38.08558,
+     "lon": -78.44477,
+     "alt_ft": 9000,
+     "gs_kt": 140,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.33423,
+     "lon": -78.47791,
+     "alt_ft": 3000,
+     "gs_kt": 80,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY51",
+   "icao_hex": "AE003A",
+   "squawk": "6576",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 63221,
+   "waypoints": [
+    {
+     "lat": 38.42504,
+     "lon": -77.97628,
+     "alt_ft": 9000,
+     "gs_kt": 140,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.47002,
+     "lon": -78.29051,
+     "alt_ft": 3000,
+     "gs_kt": 80,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH740",
+   "icao_hex": "AE003B",
+   "squawk": "1370",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 63972,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 170,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 260,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER44",
+   "icao_hex": "AE0007",
+   "squawk": "1702",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 64800,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "N577UK",
+   "icao_hex": "AE003C",
+   "squawk": "4121",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 64956,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.47651,
+     "lon": -78.51093,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5114,
+     "lon": -78.54002,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH986",
+   "icao_hex": "AE003D",
+   "squawk": "3312",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 66068,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 230,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 330,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4562
+  },
+  {
+   "callsign": "RCH809",
+   "icao_hex": "AE003E",
+   "squawk": "4621",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 67374,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 170,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 260,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "N317CW",
+   "icao_hex": "AE003F",
+   "squawk": "2537",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 69168,
+   "waypoints": [
+    {
+     "lat": 38.15156,
+     "lon": -78.20806,
+     "alt_ft": 9000,
+     "gs_kt": 130,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.36062,
+     "lon": -78.38322,
+     "alt_ft": 3000,
+     "gs_kt": 70,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH440",
+   "icao_hex": "AE0040",
+   "squawk": "4053",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 69975,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 230,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 330,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4289
+  },
+  {
+   "callsign": "VIPER15",
+   "icao_hex": "AE0041",
+   "squawk": "5225",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 71713,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 200,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 420,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY64",
+   "icao_hex": "AE0042",
+   "squawk": "4776",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 72628,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 80,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 120,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "N776ZG",
+   "icao_hex": "AE0043",
+   "squawk": "5375",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 74400,
+   "waypoints": [
+    {
+     "lat": 38.37885,
+     "lon": -79.00941,
+     "alt_ft": 9000,
+     "gs_kt": 130,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.45154,
+     "lon": -78.70376,
+     "alt_ft": 3000,
+     "gs_kt": 70,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY12",
+   "icao_hex": "AE0044",
+   "squawk": "1200",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 75345,
+   "waypoints": [
+    {
+     "lat": 38.11223,
+     "lon": -78.30518,
+     "alt_ft": 9000,
+     "gs_kt": 140,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.34489,
+     "lon": -78.42207,
+     "alt_ft": 3000,
+     "gs_kt": 80,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER95",
+   "icao_hex": "AE0008",
+   "squawk": "4174",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 75600,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 420,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "PAT34",
+   "icao_hex": "AE0045",
+   "squawk": "1200",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 76232,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 8171
+  },
+  {
+   "callsign": "ARMY91",
+   "icao_hex": "AE0046",
+   "squawk": "1200",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 77245,
+   "waypoints": [
+    {
+     "lat": 38.79294,
+     "lon": -78.12139,
+     "alt_ft": 9000,
+     "gs_kt": 140,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.61718,
+     "lon": -78.34856,
+     "alt_ft": 3000,
+     "gs_kt": 80,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N326LU",
+   "icao_hex": "AE0047",
+   "squawk": "4203",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 79265,
+   "waypoints": [
+    {
+     "lat": 38.33005,
+     "lon": -78.9861,
+     "alt_ft": 9000,
+     "gs_kt": 130,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.43202,
+     "lon": -78.69444,
+     "alt_ft": 3000,
+     "gs_kt": 70,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "PAT64",
+   "icao_hex": "AE0048",
+   "squawk": "3646",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 81015,
+   "waypoints": [
+    {
+     "lat": 38.21956,
+     "lon": -78.10624,
+     "alt_ft": 9000,
+     "gs_kt": 280,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.38782,
+     "lon": -78.34249,
+     "alt_ft": 3000,
+     "gs_kt": 220,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 9339
+  },
+  {
+   "callsign": "ARMY11",
+   "icao_hex": "AE0049",
+   "squawk": "1200",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 82042,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.47651,
+     "lon": -78.51093,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5114,
+     "lon": -78.54002,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N478VR",
+   "icao_hex": "AE004A",
+   "squawk": "2511",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 83625,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N859HB",
+   "icao_hex": "AE004B",
+   "squawk": "3365",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 84647,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER93",
+   "icao_hex": "AE004C",
+   "squawk": "5220",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 86346,
+   "waypoints": [
+    {
+     "lat": 38.75513,
+     "lon": -78.92093,
+     "alt_ft": 9000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.60205,
+     "lon": -78.66837,
+     "alt_ft": 3000,
+     "gs_kt": 200,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH870",
+   "icao_hex": "AE0009",
+   "squawk": "2566",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 86400,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4221
+  },
+  {
+   "callsign": "RCH767",
+   "icao_hex": "AE004D",
+   "squawk": "4555",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 88308,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 170,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 260,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "N183LA",
+   "icao_hex": "AE004E",
+   "squawk": "3604",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 89664,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.47651,
+     "lon": -78.51093,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5114,
+     "lon": -78.54002,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N376KB",
+   "icao_hex": "AE004F",
+   "squawk": "6543",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 91850,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N789RA",
+   "icao_hex": "AE0050",
+   "squawk": "3024",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 92814,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY92",
+   "icao_hex": "AE0051",
+   "squawk": "6773",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 94324,
+   "waypoints": [
+    {
+     "lat": 38.57259,
+     "lon": -79.02427,
+     "alt_ft": 9000,
+     "gs_kt": 140,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.52904,
+     "lon": -78.70971,
+     "alt_ft": 3000,
+     "gs_kt": 80,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N263TC",
+   "icao_hex": "AE0052",
+   "squawk": "3104",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 96486,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "RCH420",
+   "icao_hex": "AE000A",
+   "squawk": "4343",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 97200,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 330,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4526
+  },
+  {
+   "callsign": "N121KC",
+   "icao_hex": "AE0053",
+   "squawk": "1746",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 97765,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH962",
+   "icao_hex": "AE0054",
+   "squawk": "6554",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 98553,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 230,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 330,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4888
+  },
+  {
+   "callsign": "RCH975",
+   "icao_hex": "AE0055",
+   "squawk": "1404",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 99985,
+   "waypoints": [
+    {
+     "lat": 38.17651,
+     "lon": -78.83556,
+     "alt_ft": 9000,
+     "gs_kt": 290,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.3706,
+     "lon": -78.63422,
+     "alt_ft": 3000,
+     "gs_kt": 230,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 4773
+  },
+  {
+   "callsign": "N935ER",
+   "icao_hex": "AE0056",
+   "squawk": "6531",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 101913,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER23",
+   "icao_hex": "AE0057",
+   "squawk": "1631",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 103885,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 200,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 420,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "PAT12",
+   "icao_hex": "AE0058",
+   "squawk": "1072",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 104657,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 9108
+  },
+  {
+   "callsign": "N848HD",
+   "icao_hex": "AE0059",
+   "squawk": "2577",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 106260,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "RCH531",
+   "icao_hex": "AE000B",
+   "squawk": "4746",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 108000,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4034
+  },
+  {
+   "callsign": "ARMY49",
+   "icao_hex": "AE005A",
+   "squawk": "2233",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 108421,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.47651,
+     "lon": -78.51093,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5114,
+     "lon": -78.54002,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N185KW",
+   "icao_hex": "AE005B",
+   "squawk": "2421",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 110485,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER45",
+   "icao_hex": "AE005C",
+   "squawk": "6635",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 111279,
+   "waypoints": [
+    {
+     "lat": 38.38355,
+     "lon": -79.01119,
+     "alt_ft": 9000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.45342,
+     "lon": -78.70448,
+     "alt_ft": 3000,
+     "gs_kt": 200,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "PAT75",
+   "icao_hex": "AE005D",
+   "squawk": "2204",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 113471,
+   "waypoints": [
+    {
+     "lat": 38.1252,
+     "lon": -78.26741,
+     "alt_ft": 9000,
+     "gs_kt": 280,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35008,
+     "lon": -78.40696,
+     "alt_ft": 3000,
+     "gs_kt": 220,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 9752
+  },
+  {
+   "callsign": "RCH104",
+   "icao_hex": "AE005E",
+   "squawk": "1200",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 114278,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 230,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 330,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4489
+  },
+  {
+   "callsign": "ARMY88",
+   "icao_hex": "AE005F",
+   "squawk": "4420",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 115767,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.47651,
+     "lon": -78.51093,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5114,
+     "lon": -78.54002,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N849YH",
+   "icao_hex": "AE0060",
+   "squawk": "4753",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 117194,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER09",
+   "icao_hex": "AE0061",
+   "squawk": "1034",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 118032,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 200,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 420,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "RCH794",
+   "icao_hex": "AE000C",
+   "squawk": "1200",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 118800,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4901
+  },
+  {
+   "callsign": "N574AG",
+   "icao_hex": "AE0062",
+   "squawk": "3431",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 120127,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY15",
+   "icao_hex": "AE0063",
+   "squawk": "3403",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 121658,
+   "waypoints": [
+    {
+     "lat": 38.71652,
+     "lon": -78.95488,
+     "alt_ft": 9000,
+     "gs_kt": 140,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.58661,
+     "lon": -78.68195,
+     "alt_ft": 3000,
+     "gs_kt": 80,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER41",
+   "icao_hex": "AE0064",
+   "squawk": "1200",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 122578,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 200,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 420,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "PAT94",
+   "icao_hex": "AE0065",
+   "squawk": "4642",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 123890,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 9783
+  },
+  {
+   "callsign": "ARMY60",
+   "icao_hex": "AE0066",
+   "squawk": "5131",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 125224,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 80,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 120,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "RCH692",
+   "icao_hex": "AE0067",
+   "squawk": "3706",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 127274,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 230,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 330,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4885
+  },
+  {
+   "callsign": "N861AU",
+   "icao_hex": "AE0068",
+   "squawk": "6045",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 128342,
+   "waypoints": [
+    {
+     "lat": 38.34615,
+     "lon": -78.00522,
+     "alt_ft": 9000,
+     "gs_kt": 130,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.43846,
+     "lon": -78.30209,
+     "alt_ft": 3000,
+     "gs_kt": 70,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH880",
+   "icao_hex": "AE0069",
+   "squawk": "3604",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 129249,
+   "waypoints": [
+    {
+     "lat": 38.08453,
+     "lon": -78.45965,
+     "alt_ft": 9000,
+     "gs_kt": 290,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.33381,
+     "lon": -78.48386,
+     "alt_ft": 3000,
+     "gs_kt": 230,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 4259
+  },
+  {
+   "callsign": "RCH488",
+   "icao_hex": "AE000D",
+   "squawk": "5204",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 129600,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 25000,
+     "gs_kt": 260,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY96",
+   "icao_hex": "AE006A",
+   "squawk": "1200",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 130755,
+   "waypoints": [
+    {
+     "lat": 38.14956,
+     "lon": -78.788,
+     "alt_ft": 9000,
+     "gs_kt": 140,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35982,
+     "lon": -78.6152,
+     "alt_ft": 3000,
+     "gs_kt": 80,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "PAT42",
+   "icao_hex": "AE006B",
+   "squawk": "1725",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 131551,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 8344
+  },
+  {
+   "callsign": "N692SA",
+   "icao_hex": "AE006C",
+   "squawk": "6245",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 132453,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "PAT52",
+   "icao_hex": "AE006D",
+   "squawk": "1410",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 134484,
+   "waypoints": [
+    {
+     "lat": 38.17769,
+     "lon": -78.83742,
+     "alt_ft": 9000,
+     "gs_kt": 280,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.37108,
+     "lon": -78.63497,
+     "alt_ft": 3000,
+     "gs_kt": 220,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 8903
+  },
+  {
+   "callsign": "PAT56",
+   "icao_hex": "AE006E",
+   "squawk": "6247",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 136649,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 9749
+  },
+  {
+   "callsign": "ARMY33",
+   "icao_hex": "AE006F",
+   "squawk": "1365",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 137647,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.47651,
+     "lon": -78.51093,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5114,
+     "lon": -78.54002,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "PAT22",
+   "icao_hex": "AE0070",
+   "squawk": "4346",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 138951,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 9503
+  },
+  {
+   "callsign": "RCH168",
+   "icao_hex": "AE000E",
+   "squawk": "3540",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 140400,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 22000,
+     "gs_kt": 330,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4851
+  },
+  {
+   "callsign": "RCH250",
+   "icao_hex": "AE0071",
+   "squawk": "2663",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 140661,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 230,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 330,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4220
+  },
+  {
+   "callsign": "N901CM",
+   "icao_hex": "AE0072",
+   "squawk": "4066",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 142326,
+   "waypoints": [
+    {
+     "lat": 38.91656,
+     "lon": -78.48789,
+     "alt_ft": 9000,
+     "gs_kt": 130,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.66662,
+     "lon": -78.49515,
+     "alt_ft": 3000,
+     "gs_kt": 70,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N681HT",
+   "icao_hex": "AE0073",
+   "squawk": "4645",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 143762,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "PAT47",
+   "icao_hex": "AE0074",
+   "squawk": "3340",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 144972,
+   "waypoints": [
+    {
+     "lat": 38.3863,
+     "lon": -77.9878,
+     "alt_ft": 9000,
+     "gs_kt": 280,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.45452,
+     "lon": -78.29512,
+     "alt_ft": 3000,
+     "gs_kt": 220,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 9988
+  },
+  {
+   "callsign": "N613JD",
+   "icao_hex": "AE0075",
+   "squawk": "6431",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 146594,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "RCH274",
+   "icao_hex": "AE0076",
+   "squawk": "3060",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 148169,
+   "waypoints": [
+    {
+     "lat": 38.44528,
+     "lon": -77.9722,
+     "alt_ft": 9000,
+     "gs_kt": 290,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.47811,
+     "lon": -78.28888,
+     "alt_ft": 3000,
+     "gs_kt": 230,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 4537
+  },
+  {
+   "callsign": "N210CW",
+   "icao_hex": "AE0077",
+   "squawk": "4640",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 149798,
+   "waypoints": [
+    {
+     "lat": 38.74421,
+     "lon": -78.06863,
+     "alt_ft": 9000,
+     "gs_kt": 130,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.59769,
+     "lon": -78.32745,
+     "alt_ft": 3000,
+     "gs_kt": 70,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER50",
+   "icao_hex": "AE0078",
+   "squawk": "1200",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 150831,
+   "waypoints": [
+    {
+     "lat": 38.46746,
+     "lon": -79.03078,
+     "alt_ft": 9000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.48698,
+     "lon": -78.71231,
+     "alt_ft": 3000,
+     "gs_kt": 200,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH847",
+   "icao_hex": "AE000F",
+   "squawk": "1200",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 151200,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 330,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4089
+  },
+  {
+   "callsign": "PAT18",
+   "icao_hex": "AE0079",
+   "squawk": "1200",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 153036,
+   "waypoints": [
+    {
+     "lat": 38.77989,
+     "lon": -78.8944,
+     "alt_ft": 9000,
+     "gs_kt": 280,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.61196,
+     "lon": -78.65776,
+     "alt_ft": 3000,
+     "gs_kt": 220,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 9654
+  },
+  {
+   "callsign": "RCH424",
+   "icao_hex": "AE007A",
+   "squawk": "6263",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 154892,
+   "waypoints": [
+    {
+     "lat": 38.10008,
+     "lon": -78.35058,
+     "alt_ft": 9000,
+     "gs_kt": 230,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.34003,
+     "lon": -78.44023,
+     "alt_ft": 3000,
+     "gs_kt": 170,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "PAT77",
+   "icao_hex": "AE007B",
+   "squawk": "5442",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 156439,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 9055
+  },
+  {
+   "callsign": "RCH898",
+   "icao_hex": "AE007C",
+   "squawk": "4630",
+   "ac_type": "C-17",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 157861,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 230,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 330,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 4681
+  },
+  {
+   "callsign": "ARMY39",
+   "icao_hex": "AE007D",
+   "squawk": "1153",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 158949,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 80,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 120,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "PAT97",
+   "icao_hex": "AE007E",
+   "squawk": "5345",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": true,
+   "departure_offset_s": 159860,
+   "waypoints": [
+    {
+     "lat": 38.28735,
+     "lon": -78.95785,
+     "alt_ft": 9000,
+     "gs_kt": 280,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.41494,
+     "lon": -78.68314,
+     "alt_ft": 3000,
+     "gs_kt": 220,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ],
+   "fuel_request_gal": 8053
+  },
+  {
+   "callsign": "ARMY57",
+   "icao_hex": "AE007F",
+   "squawk": "2150",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 161993,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 80,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 120,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "VIPER23",
+   "icao_hex": "AE0010",
+   "squawk": "3543",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 162000,
+   "waypoints": [
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 1200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 1500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 1800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 2100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 2400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 2700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 3000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 3300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 3600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 3900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 4200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 4500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 4800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 5100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 5400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 5700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 6000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 6300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 6600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 6900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 7200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 7500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 7800,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 8100,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.33573,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 8400,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.24833,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 8700,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.27868,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 9000,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.41259,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 9300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.31206,
+     "lon": -78.58741,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 9600,
+     "on_ground": false
+    },
+    {
+     "lat": 38.4,
+     "lon": -78.72132,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 9900,
+     "on_ground": false
+    },
+    {
+     "lat": 38.53473,
+     "lon": -78.75167,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 10200,
+     "on_ground": false
+    },
+    {
+     "lat": 38.65321,
+     "lon": -78.66427,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 10500,
+     "on_ground": false
+    },
+    {
+     "lat": 38.7,
+     "lon": -78.5,
+     "alt_ft": 18000,
+     "gs_kt": 420,
+     "offset_s": 10800,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "ARMY38",
+   "icao_hex": "AE0080",
+   "squawk": "6573",
+   "ac_type": "UH-60",
+   "category": "helo",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 162891,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.47651,
+     "lon": -78.51093,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5114,
+     "lon": -78.54002,
+     "alt_ft": 1520,
+     "gs_kt": 80,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N743SD",
+   "icao_hex": "AE0081",
+   "squawk": "1200",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 164367,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.47651,
+     "lon": -78.51093,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5114,
+     "lon": -78.54002,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "N527CW",
+   "icao_hex": "AE0082",
+   "squawk": "1406",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "local",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 165549,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.49145,
+     "lon": -78.46998,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 240,
+     "on_ground": false
+    },
+    {
+     "lat": 38.46868,
+     "lon": -78.51457,
+     "alt_ft": 1520,
+     "gs_kt": 70,
+     "offset_s": 480,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 900,
+     "on_ground": true
+    }
+   ]
+  },
+  {
+   "callsign": "RCH608",
+   "icao_hex": "AE0083",
+   "squawk": "3342",
+   "ac_type": "C-130",
+   "category": "medium",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 167508,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 170,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 260,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "N515ZL",
+   "icao_hex": "AE0084",
+   "squawk": "6235",
+   "ac_type": "C-172",
+   "category": "light",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": false,
+   "departure_offset_s": 168686,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.443,
+     "lon": -78.29988,
+     "alt_ft": 4000,
+     "gs_kt": 70,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.35749,
+     "lon": -77.9997,
+     "alt_ft": 12000,
+     "gs_kt": 110,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ]
+  },
+  {
+   "callsign": "PAT15",
+   "icao_hex": "AE0085",
+   "squawk": "6221",
+   "ac_type": "KC-135",
+   "category": "heavy",
+   "flight_rule": "outbound",
+   "destination": "KADW",
+   "origin": "KBAX",
+   "heavy": true,
+   "departure_offset_s": 169863,
+   "waypoints": [
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 0,
+     "on_ground": true
+    },
+    {
+     "lat": 38.65662,
+     "lon": -78.42716,
+     "alt_ft": 4000,
+     "gs_kt": 220,
+     "offset_s": 300,
+     "on_ground": false
+    },
+    {
+     "lat": 38.89154,
+     "lon": -78.31791,
+     "alt_ft": 12000,
+     "gs_kt": 320,
+     "offset_s": 720,
+     "on_ground": false
+    }
+   ],
+   "fuel_request_gal": 8793
+  },
+  {
+   "callsign": "VIPER89",
+   "icao_hex": "AE0086",
+   "squawk": "4055",
+   "ac_type": "F-16",
+   "category": "fast",
+   "flight_rule": "inbound",
+   "destination": "KBAX",
+   "origin": "KADW",
+   "heavy": false,
+   "departure_offset_s": 171671,
+   "waypoints": [
+    {
+     "lat": 38.62305,
+     "lon": -79.00866,
+     "alt_ft": 9000,
+     "gs_kt": 260,
+     "offset_s": 0,
+     "on_ground": false
+    },
+    {
+     "lat": 38.54922,
+     "lon": -78.70347,
+     "alt_ft": 3000,
+     "gs_kt": 200,
+     "offset_s": 360,
+     "on_ground": false
+    },
+    {
+     "lat": 38.5,
+     "lon": -78.5,
+     "alt_ft": 520,
+     "gs_kt": 0,
+     "offset_s": 720,
+     "on_ground": true
+    }
+   ]
+  }
+ ]
 }

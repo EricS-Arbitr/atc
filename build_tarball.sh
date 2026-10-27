@@ -15,6 +15,7 @@ INCLUDE=(
   hosts
   site.yml
   deploy.sh
+  verify_atc.sh
   playbooks
   roles
   group_vars
