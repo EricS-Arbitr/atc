@@ -30,7 +30,10 @@ if command -v ansible-playbook >/dev/null 2>&1; then
 fi
 
 echo "Bundling ${OUT}..."
-tar --exclude='__pycache__' --exclude='*.pyc' --exclude='.DS_Store' \
+# COPYFILE_DISABLE stops macOS bsdtar emitting AppleDouble (._*) + xattr headers
+# that litter the controller's /etc/ansible on extract.
+COPYFILE_DISABLE=1 tar --no-xattrs \
+    --exclude='__pycache__' --exclude='*.pyc' --exclude='.DS_Store' --exclude='._*' \
     -czf "$OUT" "${INCLUDE[@]}"
 echo "Wrote ${OUT} ($(du -h "$OUT" | cut -f1))"
 tar tzf "$OUT" | head
