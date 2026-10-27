@@ -86,13 +86,16 @@ def _interp(wps, t):
     return wps[-1]
 
 
-def _sbs(fields):
-    """Build one SBS/BaseStation CSV line (10 leading fields + payload)."""
+def _sbs(mtype, hexid, rest):
+    """One SBS/BaseStation CSV line. `mtype` is the transmission type (field 2,
+    REQUIRED — readsb drops the record without it). `rest` is the 12 trailing
+    fields 11..22 (Callsign, Altitude, GroundSpeed, Track, Lat, Lon,
+    VerticalRate, Squawk, Alert, Emergency, SPI, IsOnGround)."""
     gen = datetime.now(timezone.utc)
     ds = gen.strftime("%Y/%m/%d")
     ts = gen.strftime("%H:%M:%S.000")
-    base = ["MSG", "", "1", "1", fields["hex"], "1", ds, ts, ds, ts]
-    return (",".join(base + fields["rest"]) + "\r\n").encode()
+    base = ["MSG", str(mtype), "1", "1", hexid, "1", ds, ts, ds, ts]
+    return (",".join(base + rest) + "\r\n").encode()
 
 
 def run(cfg):
@@ -124,17 +127,16 @@ def run(cfg):
             if p is None:
                 continue
             hexid = fl["icao_hex"]
-            # MSG1 identification (callsign)
-            clients.broadcast(_sbs({"hex": hexid,
-                                    "rest": ["", "", fl["callsign"], "", "", "", "", "", "", "", "", ""]}))
-            # MSG3 airborne position (alt, lat, lon)
-            clients.broadcast(_sbs({"hex": hexid,
-                                    "rest": ["", "", "", "", f"{int(p['alt_ft'])}", "",
-                                             f"{p['lat']:.5f}", f"{p['lon']:.5f}", "", "", "", "0"]}))
-            # MSG4 velocity (ground speed)
-            clients.broadcast(_sbs({"hex": hexid,
-                                    "rest": ["", "", "", "", "", f"{int(p['gs_kt'])}",
-                                             "", "", "", "", "", ""]}))
+            on_gnd = "1" if p.get("alt_ft", 0) <= wps[0]["alt_ft"] + 50 else "0"
+            # MSG1 identification: callsign (field 11)
+            clients.broadcast(_sbs(1, hexid, [fl["callsign"]] + [""] * 11))
+            # MSG3 airborne position: altitude (12), lat (15), lon (16), onground (22)
+            clients.broadcast(_sbs(3, hexid, ["", str(int(p["alt_ft"])), "", "",
+                                              f"{p['lat']:.5f}", f"{p['lon']:.5f}",
+                                              "", fl.get("squawk", ""), "", "", "", on_gnd]))
+            # MSG4 velocity: ground speed (13)
+            clients.broadcast(_sbs(4, hexid, ["", "", str(int(p["gs_kt"])), "",
+                                              "", "", "", "", "", "", "", ""]))
         time.sleep(period)
 
 
