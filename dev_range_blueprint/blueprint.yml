@@ -22,10 +22,10 @@
 # WORK_DIR/ARBITR_MB_0113 so host_vars and roles are reusable. `.2` is reserved
 # platform-wide in every subnet (airfield CLAUDE.md §3.7) — no host uses it.
 #
-# PLACEHOLDER: the download-range-vars-script points at an ATC dev tarball that
-# does not exist yet. Confirm the git remote/branch and pin it to a commit SHA
-# (like the airfield blueprint) once vCity/ATC + its build_tarball.sh produce
-# one. Until then this range provisions but has nothing to deploy.
+# The download-range-vars-script pulls atc_dev.tgz from github.com/EricS-Arbitr/atc
+# pinned to a commit SHA (branch URLs are CDN-cached). RE-PIN THE SHA whenever
+# the tarball changes: build_tarball.sh -> commit atc_dev.tgz -> push -> update
+# the SHA in the URL below to that commit.
 # ============================================================================
 ---
 name: "ARBITR_ATC_DEV"
@@ -121,7 +121,7 @@ resources:
   properties:
     cwd: "/etc/ansible"
     user: "root"
-    content: "wget --no-check-certificate --no-cache -e use_proxy=yes -e https_proxy=10.255.240.1:3128 -O /etc/ansible/atc_dev.tgz https://github.com/EricS-Arbitr/ATC/raw/main/atc_dev.tgz && tar -xvzf atc_dev.tgz\n"
+    content: "wget --no-check-certificate --no-cache -e use_proxy=yes -e https_proxy=10.255.240.1:3128 -O /etc/ansible/atc_dev.tgz https://github.com/EricS-Arbitr/atc/raw/e22c2e64508cce2b287f31be54fa350f06bb4b45/atc_dev.tgz && tar -xvzf atc_dev.tgz\n"
     scriptType: "BASH"
 - type: "range.resource.configuration.ScriptDefinition::1.0.0"
   name: "deploy-script"
