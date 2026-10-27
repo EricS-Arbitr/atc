@@ -70,10 +70,10 @@ atc_tar1090_range_rings_nm: [10, 20, 40]
 # background (fine for dev). Staging an offline tileset from ng_raw is the
 # air-gap polish item.
 atc_tar1090_offline_tiles: true
-# tar1090's BUILT-IN offline layer reads html/osm_tiles_offline/{z}/{x}/{y}.png
-# and is enabled by offlineMapDetail>0 (= max zoom). We stage tiles there and
-# make it the default basemap (MapType_tar1090) via config.js.
-atc_tar1090_tiles_dir: "/usr/local/share/tar1090/html/osm_tiles_offline"
+# tar1090's BUILT-IN offline layer (enabled by offlineMapDetail>0 = max zoom).
+# Its lighttpd conf ALIASES /tar1090/osm_tiles_offline/ to
+# /usr/local/share/osm_tiles_offline/ (NOT under html/) — tiles must live there.
+atc_tar1090_tiles_dir: "/usr/local/share/osm_tiles_offline"
 atc_tar1090_tiles_url: "/tar1090/osm_tiles_offline/{z}/{x}/{y}.png"
 # DEV tile source, fetched via the mgmt proxy (the hosts have no browser egress,
 # so tiles are served LOCALLY). AIR-GAP: stage this same {z}/{x}/{y}.png set to
