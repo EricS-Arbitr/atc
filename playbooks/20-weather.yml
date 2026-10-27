@@ -1,0 +1,7 @@
+---
+# Phase 2 — weather feed on atc-weather (sibling system; ATC consumes METAR/TAF).
+- name: ATC weather feed
+  hosts: atc_weather
+  gather_facts: true
+  roles:
+    - atc_weather

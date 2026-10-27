@@ -1,0 +1,6 @@
+---
+# common role defaults
+manage_etc_hosts: true
+manage_apt_proxy: true
+manage_chrony: true
+create_atc_user: true

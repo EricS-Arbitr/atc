@@ -1,0 +1,87 @@
+---
+# ============================================================================
+# atc.yml — single source of truth for the ATC subsystem
+# Consumed by roles atc_inject, atc_core, atc_weather, atc_cwp.
+# Grounded in docs/atc_cyber_range_project_design_document.md (§4, §8).
+# ============================================================================
+
+# --- Host addressing (prod IPs; mgmt IPs live in host_vars) -----------------
+atc_radar_ip:   "172.31.5.10"     # atc-radar   — feed + readsb + tar1090 + FDP
+atc_station_ip: "172.31.5.12"     # atc-station — CWP kiosk + display
+atc_weather_ip: "172.31.5.11"     # atc-weather — METAR/TAF feed
+
+# --- Install paths ----------------------------------------------------------
+atc_root: "/opt/atc"
+atc_venv: "/opt/atc/venv"         # Python venv for the feed + FDP + weather
+atc_user: "atc"                   # service account (created by common/role)
+
+# --- Python sourcing (dev = public PyPI via proxy; air-gap = ng_pypi) --------
+atc_pip_index_url: ""             # "" → default PyPI; set to nexus_pypi_index for air-gap
+atc_pip_trusted_host: "{{ nexus_host }}"
+
+# --- Exercise clock (epoch-based; survives restarts; range-wide) ------------
+# cycle_position = (now_utc - atc_exercise_epoch) % atc_cycle_seconds
+# Pick a FIXED epoch and keep it identical across any coupled system (weather,
+# and the fuel farm in the full range) so movements line up. Default 48 h to
+# match the airfield replay convention.
+atc_exercise_epoch: "2026-01-01T00:00:00Z"
+atc_cycle_seconds: 172800         # 48 h
+atc_cycle_wrap_gap_seconds: 60    # clean "end of window" gap before restart
+
+# --- ADS-B feed (design §2, §4A) --------------------------------------------
+# Primary = Beast DF17 on :30005 (real frames); SBS/BaseStation :30003 is a
+# secondary human-readable output. Feed binds 0.0.0.0, multi-client.
+atc_feed_bind: "0.0.0.0"
+atc_feed_beast_port: 30005
+atc_feed_sbs_port: 30003
+atc_feed_rate_hz: 1               # position update rate
+atc_primary_radar_enabled: false  # optional independent feed for cross-check detections
+
+# --- readsb (design §4B) ----------------------------------------------------
+# Pinned .deb from Nexus ng_raw for air-gap; dev may install from a staged
+# .deb. readsb runs network-only (no SDR), pulling the local Beast feed.
+atc_readsb_deb_url: ""            # set to the ng_raw .deb URL once staged
+# Interim: the feed stub emits SBS on :30003, so readsb ingests sbs_in. TARGET
+# once the feed emits Beast DF17: "127.0.0.1,{{ atc_feed_beast_port }},beast_in".
+atc_readsb_net_connector: "127.0.0.1,{{ atc_feed_sbs_port }},sbs_in"
+atc_readsb_disable_aircraft_db: true   # AE… hex codes must NOT map to real airframes
+
+# --- tar1090 (design §4B) ---------------------------------------------------
+atc_tar1090_web: "lighttpd"       # tar1090's shipped default
+atc_tar1090_offline_tiles: true   # serve local tiles, never OSM/internet
+atc_tar1090_tiles_url: ""         # ng_raw offline tileset artifact (set when staged)
+
+# --- Flight Data Processor (design §4C) -------------------------------------
+atc_fdp_port: 8080
+atc_fdp_admin_password: "{{ vault_fdp_admin_password }}"
+atc_fdp_api_token: "{{ vault_fdp_api_token }}"
+# Deliberate range vulnerabilities — DEFAULT SECURE. Each is marked
+# `# RANGE-VULN:` in code and documented in the instructor answer key.
+atc_vulns_enabled: false
+# Fuel-requisition link (design §4D) — OFF in the dev range (no fuel farm here).
+# When enabled in the full range it points at the requisition broker, never the
+# OT DB directly.
+atc_fuel_requisition_enabled: false
+atc_fuel_requisition_url: ""
+
+# --- Weather (sibling; ATC consumes METAR/TAF at the display) ---------------
+atc_weather_port: 8081
+atc_weather_protocol: "http"      # http endpoint the FDP/CWP polls
+
+# --- Airfield parameters (FICTIONAL — design §8; not a real field) ----------
+atc_airfield:
+  ident_icao: "KBAX"
+  ident_faa:  "BAX"
+  name:       "Blackstone Auxiliary Field"
+  lat:         38.5000
+  lon:        -78.5000
+  field_elev_ft: 520
+  mag_var_deg:  -9.0
+  pattern_alt_ft_agl: 1000
+  runways:
+    - { ident: "02/20", true_hdg: 20,  length_ft: 8000, surface: "asphalt" }
+    - { ident: "11/29", true_hdg: 110, length_ft: 5000, surface: "asphalt" }
+  nav_fixes: []
+
+# Path to the generated schedule (bundled under sim-data/atc, staged by atc_inject)
+atc_schedule_src: "sim-data/atc/schedule.json"

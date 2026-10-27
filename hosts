@@ -1,0 +1,35 @@
+# ATC dev range inventory (ARBITR_ATC_DEV).
+# ansible_host (= management IP, 10.255.240.0/20) is set per host in host_vars/.
+# Prod IPs live in each host's network_interfaces (host_vars) — single source
+# of truth, consumed by the common role.
+
+# --- The Ansible controller (not a managed target) --------------------------
+[ansible_controller]
+ansible
+
+# --- Router / gateway (platform sets GATEWAY role from the blueprint) --------
+[net]
+dev-rtr
+
+[vyos:children]
+net
+
+# --- ATC service hosts ------------------------------------------------------
+[atc_radar]
+atc-radar
+
+[atc_cwp]
+atc-station
+
+[atc_weather]
+atc-weather
+
+# All ATC hosts
+[atc:children]
+atc_radar
+atc_cwp
+atc_weather
+
+# Every managed Linux host (drives the common role + Linux task loading)
+[linux:children]
+atc

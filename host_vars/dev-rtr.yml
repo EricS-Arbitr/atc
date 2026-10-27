@@ -1,0 +1,5 @@
+---
+# dev-rtr — VyOS gateway for Flight-Control-Center. The platform configures the
+# GATEWAY-role NICs from the blueprint; no routing role runs here by default
+# (single data subnet). mgmt IP only.
+ansible_host: "10.255.240.100"

@@ -1,0 +1,8 @@
+---
+# Phase 3 — controller working position on atc-station: autostart a fullscreen
+# browser showing the combined radar + strips ops page.
+- name: ATC controller working position
+  hosts: atc_cwp
+  gather_facts: true
+  roles:
+    - atc_cwp

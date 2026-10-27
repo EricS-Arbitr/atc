@@ -1,0 +1,11 @@
+---
+# Ansible Galaxy collections for the ATC dev range.
+# Dev range has egress; air-gapped ranges fetch these from Nexus ng_raw/galaxy
+# (ansible-galaxy ... --ignore-certs, set in deploy.sh) — see CLAUDE.md.
+collections:
+  - name: ansible.posix
+    version: ">=1.5.0"
+  - name: community.general
+    version: ">=8.0.0"
+  - name: vyos.vyos
+    version: ">=4.0.0"

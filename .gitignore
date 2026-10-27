@@ -1,0 +1,24 @@
+# Vault password + keys — never commit
+.vault_pass
+*.pem
+*.p12
+*.pfx
+id_rsa*
+.ssh/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / OS
+.DS_Store
+*.swp
+
+# Ansible runtime
+*.retry
+~/.ansible/
+
+# NOTE: atc_dev.tgz (the built artifact) IS committed — the controller deploys
+# from the tarball, not a git pull. See build_tarball.sh / CLAUDE.md.

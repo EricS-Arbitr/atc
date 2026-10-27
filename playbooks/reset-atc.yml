@@ -1,0 +1,14 @@
+---
+# SEPARATE reset playbook — NOT part of site.yml. Wipes exercise state so the
+# next run starts clean, without the deploy path ever destroying data.
+# Run explicitly:  ansible-playbook playbooks/reset-atc.yml
+#
+# TODO(impl): truncate the FDP SQLite DB, clear live tracks, reset the cycle
+# marker. Keep a --tags data vs --tags config split (data-only vs also re-init).
+- name: Reset ATC exercise state
+  hosts: atc_radar
+  gather_facts: false
+  tasks:
+    - name: Placeholder — reset not yet implemented
+      ansible.builtin.debug:
+        msg: "TODO: reset FDP DB + live tracks + cycle marker (see role atc_core)."

@@ -1,0 +1,30 @@
+---
+# readsb — network-only decoder pulling the local feed. Ansible owns the
+# config; NO community install scripts (they fetch + build at runtime, which
+# breaks air-gap + idempotency — design §1.3/§4B).
+
+- name: Stage the readsb .deb from Nexus ng_raw
+  ansible.builtin.get_url:
+    url: "{{ atc_readsb_deb_url }}"
+    dest: "/tmp/readsb.deb"
+    validate_certs: false
+  environment:
+    https_proxy: "{{ inet_proxy }}"
+  when: atc_readsb_deb_url | length > 0
+  register: _readsb_deb
+
+- name: Install readsb
+  ansible.builtin.apt:
+    deb: "/tmp/readsb.deb"
+  when: _readsb_deb is changed
+  # TODO: until a pinned .deb is staged in ng_raw, install readsb here (build
+  # once + host the .deb). atc_readsb_deb_url empty => this role is a no-op and
+  # the P2 gate (aircraft.json) will not pass. See README "Known gaps".
+
+- name: Write /etc/default/readsb (network-only, pull the local feed)
+  ansible.builtin.template:
+    src: readsb.default.j2
+    dest: /etc/default/readsb
+    mode: "0644"
+  when: atc_readsb_deb_url | length > 0
+  notify: Restart readsb

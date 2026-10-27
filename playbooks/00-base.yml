@@ -1,0 +1,8 @@
+---
+# Phase 0 — base config on every managed Linux host: hostname, /etc/hosts
+# (no AD DNS in this range), apt proxy, chrony, and the atc service account.
+- name: Base configuration
+  hosts: linux
+  gather_facts: true
+  roles:
+    - common

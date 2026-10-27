@@ -1,0 +1,12 @@
+---
+- name: Restart readsb
+  ansible.builtin.systemd:
+    name: readsb
+    state: restarted
+  failed_when: false
+
+- name: Restart atc-fdp
+  ansible.builtin.systemd:
+    name: atc-fdp
+    state: restarted
+    daemon_reload: true

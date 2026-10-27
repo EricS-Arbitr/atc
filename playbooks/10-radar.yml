@@ -1,0 +1,9 @@
+---
+# Phase 1 — ATC core on atc-radar: the ADS-B feed engine (atc_inject), then
+# readsb + tar1090 + the Flight Data Processor (atc_core).
+- name: ATC radar core
+  hosts: atc_radar
+  gather_facts: true
+  roles:
+    - atc_inject
+    - atc_core

@@ -1,0 +1,151 @@
+# ============================================================================
+# ARBITR_ATC_DEV — ATC development range (scaled-down airfield representative)
+# ============================================================================
+# Purpose: a tiny range for iteratively developing the ATC systems only.
+# It mirrors the airfield-range Flight-Control-Center host names / images / IPs
+# so the roles port straight back, but strips everything else down:
+#   - NO security stack (no Security Onion, Splunk, Malcolm, sensors, syslog).
+#   - NO domain controller and NO Windows workstation. ATC is all-Linux; the
+#     Ubuntu Desktop `atc-station` is BOTH the controller working position
+#     (CWP kiosk) AND the display endpoint, so a Windows flight workstation +
+#     a DC to join it to would only slow provisioning without exercising any
+#     ATC code. Name resolution is /etc/hosts (the `common` role), no AD DNS.
+#   - NO fuel farm. ATC's only tie to it is the §4D requisition (FDP inserts
+#     an OPEN row into fuel_orders) — the LAST feature in the build plan and a
+#     cross-system integration. Develop that later against the real fuel farm
+#     in the full airfield range, or re-add a single `fuel-db` sink here then.
+#   - ONE flat router as the gateway for the (single) Flight-Control-Center
+#     subnet (no firewalls, no OT L3.5 boundary, no BGP/OSPF backbone).
+#
+# Repo root for the deploy content is vCity/ATC itself (build_tarball.sh there
+# produces atc_dev.tgz). Host names / prod IPs / mgmt IPs match airfield-range
+# WORK_DIR/ARBITR_MB_0113 so host_vars and roles are reusable. `.2` is reserved
+# platform-wide in every subnet (airfield CLAUDE.md §3.7) — no host uses it.
+#
+# PLACEHOLDER: the download-range-vars-script points at an ATC dev tarball that
+# does not exist yet. Confirm the git remote/branch and pin it to a commit SHA
+# (like the airfield blueprint) once vCity/ATC + its build_tarball.sh produce
+# one. Until then this range provisions but has nothing to deploy.
+# ============================================================================
+---
+name: "ARBITR_ATC_DEV"
+description: "ATC development range (scaled-down airfield representative)"
+resources:
+
+# --- Ansible controller -----------------------------------------------------
+- type: "range.resource.primitive.VmInstance::1.0.0"
+  name: "ansible"
+  properties:
+    image: "global/RC_NG_Ansible:2.0.4"
+    networkInterfaces:
+    - name: "control-10"
+      ipAddress: "10.10.10.10"
+      prefix: 16
+    managementInterface:
+      ipAddress: "10.255.240.157"
+      position: "FIRST"
+
+# --- Router (gateway for every data subnet) ---------------------------------
+- type: "range.resource.primitive.VmInstance::1.0.0"
+  name: "dev-rtr"
+  properties:
+    image: "RC-VyOS-Router:1.1.0"
+    networkInterfaces:
+    - name: "Flight-Control-Center"
+      ipAddress: "172.31.5.1"
+      prefix: 24
+      role: "GATEWAY"
+    managementInterface:
+      ipAddress: "10.255.240.100"
+      position: "LAST"
+
+# --- ATC core: feed engine + readsb + tar1090 + FDP (design doc §2, §4) ------
+- type: "range.resource.primitive.VmInstance::1.0.0"
+  name: "atc-radar"
+  metadata: {}
+  properties:
+    image: "global/RDP_Ubuntu_Server_22.04.5:1.1.0"
+    networkInterfaces:
+    - name: "Flight-Control-Center"
+      ipAddress: "172.31.5.10"
+      prefix: 24
+    hostname: "atc-radar"
+    managementInterface:
+      ipAddress: "10.255.240.145"
+      position: "FIRST"
+
+# --- ATC CWP + display: controller working position (kiosk) -----------------
+#     Single Ubuntu Desktop; doubles as the display endpoint (no Windows wks).
+- type: "range.resource.primitive.VmInstance::1.0.0"
+  name: "atc-station"
+  metadata: {}
+  properties:
+    image: "global/RDP_Ubuntu_Desktop_22.04.5:1.1.0"
+    networkInterfaces:
+    - name: "Flight-Control-Center"
+      ipAddress: "172.31.5.12"
+      prefix: 24
+    hostname: "atc-station"
+    managementInterface:
+      ipAddress: "10.255.240.111"
+      position: "FIRST"
+
+# --- Weather (sibling system; ATC consumes METAR/TAF at the display) --------
+- type: "range.resource.primitive.VmInstance::1.0.0"
+  name: "atc-weather"
+  metadata: {}
+  properties:
+    image: "global/RDP_Ubuntu_Server_22.04.5:1.1.0"
+    networkInterfaces:
+    - name: "Flight-Control-Center"
+      ipAddress: "172.31.5.11"
+      prefix: 24
+    hostname: "atc-weather"
+    managementInterface:
+      ipAddress: "10.255.240.160"
+      position: "FIRST"
+
+# --- Subnets ----------------------------------------------------------------
+- type: "range.resource.primitive.Subnet::1.0.0"
+  name: "Flight-Control-Center"
+  properties:
+    cidr: "172.31.5.0/24"
+- type: "range.resource.primitive.Subnet::1.0.0"
+  name: "control-10"
+  properties:
+    cidr: "10.10.0.0/16"
+
+# --- Deploy chain: download the ATC dev tarball, then run deploy.sh ----------
+- type: "range.resource.configuration.ScriptDefinition::1.0.0"
+  name: "download-range-vars-script"
+  properties:
+    cwd: "/etc/ansible"
+    user: "root"
+    content: "wget --no-check-certificate --no-cache -e use_proxy=yes -e https_proxy=10.255.240.1:3128 -O /etc/ansible/atc_dev.tgz https://github.com/EricS-Arbitr/ATC/raw/main/atc_dev.tgz && tar -xvzf atc_dev.tgz\n"
+    scriptType: "BASH"
+- type: "range.resource.configuration.ScriptDefinition::1.0.0"
+  name: "deploy-script"
+  properties:
+    cwd: "/etc/ansible"
+    user: "root"
+    content: "./deploy.sh | tee /var/log/playbook_run.log\n"
+    timeout: 7200
+    scriptType: "BASH"
+- type: "range.resource.configuration.VmConfiguration::1.0.0"
+  name: "download-range-vars"
+  properties:
+    selector:
+      matchInstances:
+      - "ansible"
+    configurationResources:
+    - name: "download-range-vars-script"
+- type: "range.resource.configuration.VmConfiguration::1.0.0"
+  name: "deploy-script-execution"
+  dependsOn:
+  - "download-range-vars"
+  properties:
+    selector:
+      matchInstances:
+      - "ansible"
+    configurationResources:
+    - name: "deploy-script"

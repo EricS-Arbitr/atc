@@ -1,0 +1,10 @@
+{
+  "port": {{ atc_fdp_port }},
+  "db": "{{ atc_fdp_db }}",
+  "aircraft_json": "{{ atc_readsb_json_dir }}/aircraft.json",
+  "vulns_enabled": {{ atc_vulns_enabled | lower }},
+  "fuel_requisition_enabled": {{ atc_fuel_requisition_enabled | lower }},
+  "fuel_requisition_url": "{{ atc_fuel_requisition_url }}",
+  "weather_url": "{{ atc_weather_protocol }}://{{ atc_weather_ip }}:{{ atc_weather_port }}/metar",
+  "airfield": {{ atc_airfield | to_json }}
+}

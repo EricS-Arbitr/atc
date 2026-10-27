@@ -1,0 +1,9 @@
+---
+# Linux connection defaults. Images are RDP_Ubuntu_*_22.04.5:1.1.0 → user
+# `simspace` (reference_simspace_image_credentials: :1.1.0 = simspace).
+ansible_user: "simspace"
+ansible_password: "{{ vault_simspace_password }}"
+ansible_become: true
+ansible_become_method: sudo
+ansible_become_password: "{{ vault_simspace_password }}"
+ansible_python_interpreter: /usr/bin/python3

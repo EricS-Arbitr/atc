@@ -1,0 +1,38 @@
+{
+  "_comment": "Sample 3-flight fixture for Phase-1 bring-up. The real schedule is produced by generate_schedule.py (route templates, ~15-25 movements/day). offset_s is relative to departure_offset_s; both relative to atc_exercise_epoch. icao_hex AE... are synthetic (readsb aircraft-DB lookup disabled).",
+  "flights": [
+    {
+      "callsign": "RCH481", "icao_hex": "AE1001", "squawk": "1301",
+      "ac_type": "C-17", "category": "heavy", "flight_rule": "inbound",
+      "origin": "KADW", "destination": "KBAX", "heavy": true, "fuel_request_gal": 4800,
+      "departure_offset_s": 0,
+      "waypoints": [
+        {"lat": 38.80, "lon": -78.90, "alt_ft": 9000, "gs_kt": 320, "offset_s": 0,   "on_ground": false},
+        {"lat": 38.60, "lon": -78.65, "alt_ft": 4000, "gs_kt": 230, "offset_s": 300, "on_ground": false},
+        {"lat": 38.50, "lon": -78.50, "alt_ft": 520,  "gs_kt": 0,   "offset_s": 600, "on_ground": true}
+      ]
+    },
+    {
+      "callsign": "N512PA", "icao_hex": "AE1002", "squawk": "1200",
+      "ac_type": "C172", "category": "light", "flight_rule": "local",
+      "origin": "KBAX", "destination": "KBAX", "heavy": false,
+      "departure_offset_s": 120,
+      "waypoints": [
+        {"lat": 38.50, "lon": -78.50, "alt_ft": 520,  "gs_kt": 0,  "offset_s": 0,   "on_ground": true},
+        {"lat": 38.55, "lon": -78.45, "alt_ft": 1500, "gs_kt": 90, "offset_s": 240, "on_ground": false},
+        {"lat": 38.50, "lon": -78.50, "alt_ft": 520,  "gs_kt": 0,  "offset_s": 600, "on_ground": true}
+      ]
+    },
+    {
+      "callsign": "PAT22", "icao_hex": "AE1003", "squawk": "4455",
+      "ac_type": "KC-135", "category": "heavy", "flight_rule": "outbound",
+      "origin": "KBAX", "destination": "KADW", "heavy": true,
+      "departure_offset_s": 300,
+      "waypoints": [
+        {"lat": 38.50, "lon": -78.50, "alt_ft": 520,  "gs_kt": 0,   "offset_s": 0,   "on_ground": true},
+        {"lat": 38.65, "lon": -78.35, "alt_ft": 6000, "gs_kt": 260, "offset_s": 300, "on_ground": false},
+        {"lat": 38.90, "lon": -78.10, "alt_ft": 15000,"gs_kt": 380, "offset_s": 600, "on_ground": false}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+---
+# atc-weather — METAR/TAF feed (sibling system; ATC consumes it)
+# Image: global/RDP_Ubuntu_Server_22.04.5:1.1.0
+ansible_host: "10.255.240.160"
+network_interfaces:
+  - name: "eth0"                 # mgmt (position FIRST)
+    ipv4: { address: "10.255.240.160", netmask: "255.255.240.0", gateway: "" }
+  - name: "eth1"                 # production — Flight-Control-Center
+    ipv4: { address: "172.31.5.11", netmask: "255.255.255.0", gateway: "172.31.5.1" }

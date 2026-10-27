@@ -1,0 +1,23 @@
+---
+# Shared tunables for every host in the ATC dev range.
+
+# --- Management proxy / Nexus (zero-egress target state) ---------------------
+# Dev range HAS egress, but write every fetcher to go through the proxy so the
+# same content works air-gapped. Nexus is reachable ONLY via this proxy and
+# presents an internal-CA cert (untrusted by default) — see CLAUDE.md.
+inet_proxy_addr: "10.255.240.1"
+inet_proxy_port: 3128
+inet_proxy: "http://{{ inet_proxy_addr }}:{{ inet_proxy_port }}"
+
+nexus_host: "nexus.dev.ng.simspace.lan"
+# Python packages: dev pulls from public PyPI (egress); air-gapped flips to
+# ng_pypi. Roles consume atc_pip_index_url / atc_pip_trusted_host.
+nexus_pypi_index: "https://{{ nexus_host }}/repository/ng_pypi/simple"
+
+# --- Time discipline --------------------------------------------------------
+# No DC/AD DNS in this range. There is no in-range NTP host either, so the ATC
+# clocks discipline to the management gateway (platform NTP) during dev. The
+# exercise epoch (group_vars/atc.yml) is what actually keeps the feed, strips
+# and any downstream system aligned — not wall-clock source.
+ntp_servers:
+  - "{{ inet_proxy_addr }}"

@@ -1,0 +1,9 @@
+---
+# dev-rtr is a VyOS gateway. The platform configures the GATEWAY-role NICs from
+# the blueprint, so no routing role runs against it by default in this range
+# (single data subnet — nothing to route). Kept here for connection correctness
+# if a net play is added later.
+ansible_user: "vyos"
+ansible_password: "{{ vault_vyos_password }}"
+ansible_connection: network_cli
+ansible_network_os: vyos.vyos.vyos

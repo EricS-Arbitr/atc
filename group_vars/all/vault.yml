@@ -1,0 +1,11 @@
+---
+# PLACEHOLDER — dev credentials only. ENCRYPT before any non-lab use:
+#   ansible-vault encrypt group_vars/all/vault.yml --vault-password-file /home/simspace/.vault_pass
+# The images used here are :1.1.0 → the Linux login is `simspace` (see
+# reference_simspace_image_credentials). Rotate for real deploys.
+vault_simspace_password: "simspace1"
+vault_vyos_password: "simspace1"
+
+# FDP admin / API token (used once the FDP app lands). Dev placeholder.
+vault_fdp_admin_password: "Simspace1!Simspace1!"
+vault_fdp_api_token: "dev-atc-token-change-me"

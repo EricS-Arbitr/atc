@@ -1,0 +1,8 @@
+---
+# ATC dev range — entry point. Order is load-bearing: base networking/hosts
+# first, then each ATC service. Reset is a SEPARATE playbook (reset-atc.yml),
+# never part of the deploy path, so a re-run never wipes exercise state.
+- import_playbook: playbooks/00-base.yml      # common: hostname, /etc/hosts, proxy, chrony
+- import_playbook: playbooks/10-radar.yml     # atc_inject (feed) + atc_core (readsb, tar1090, FDP)
+- import_playbook: playbooks/20-weather.yml   # atc_weather (METAR/TAF feed + endpoint)
+- import_playbook: playbooks/30-cwp.yml       # atc_cwp (kiosk display on atc-station)

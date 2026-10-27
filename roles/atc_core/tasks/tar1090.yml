@@ -1,0 +1,20 @@
+---
+# tar1090 — web radar scope on lighttpd, OFFLINE (local tiles + aircraft DB
+# from Nexus ng_raw; never OSM/internet). Hex-DB lookup disabled so our
+# synthetic AE… codes don't render as real airframes (design §4B).
+
+- name: Install the web server
+  ansible.builtin.apt:
+    name: "{{ atc_tar1090_web }}"
+    state: present
+
+# TODO(Phase 3): vendor tar1090 + its aircraft DB from ng_raw (no git clone),
+# render its lighttpd config, point readsb's json at it, and stage the offline
+# tileset (atc_tar1090_tiles_url). Disable the aircraft-DB lookup when
+# atc_readsb_disable_aircraft_db. Acceptance: scope renders over a LOCAL map
+# with egress blocked.
+- name: tar1090 install placeholder
+  ansible.builtin.debug:
+    msg: >-
+      TODO: vendor tar1090 + offline tiles from Nexus ng_raw and wire lighttpd.
+      web={{ atc_tar1090_web }} offline_tiles={{ atc_tar1090_offline_tiles }}

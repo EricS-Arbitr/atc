@@ -1,0 +1,61 @@
+---
+# Lean, Linux-only base config for the ATC dev range. The platform provisions
+# NICs/IPs from the blueprint, so this does NOT do netplan surgery — it sets
+# identity, name resolution (no AD DNS here), the apt proxy, and time.
+# (If a future range needs the full dual-home netplan, swap in airfield-range's
+#  `common` role per the role-sourcing policy.)
+
+- name: Set hostname
+  ansible.builtin.hostname:
+    name: "{{ inventory_hostname }}"
+
+- name: Manage /etc/hosts for the ATC subnet (no AD DNS in this range)
+  ansible.builtin.blockinfile:
+    path: /etc/hosts
+    marker: "# {mark} ANSIBLE ATC HOSTS"
+    block: |
+      {{ atc_radar_ip }} atc-radar
+      {{ atc_station_ip }} atc-station
+      {{ atc_weather_ip }} atc-weather
+  when: manage_etc_hosts | bool
+
+- name: Configure apt proxy (works in dev via egress AND air-gapped via Nexus)
+  ansible.builtin.copy:
+    dest: /etc/apt/apt.conf.d/95-atc-proxy
+    content: |
+      Acquire::http::Proxy "{{ inet_proxy }}";
+      Acquire::https::Proxy "{{ inet_proxy }}";
+    mode: "0644"
+  when: manage_apt_proxy | bool
+
+- name: Install base packages
+  ansible.builtin.apt:
+    name:
+      - chrony
+      - python3-venv
+      - python3-pip
+      - curl
+      - jq
+    state: present
+    update_cache: true
+  register: _apt
+  retries: 3
+  delay: 10
+  until: _apt is succeeded
+
+- name: Configure chrony
+  ansible.builtin.template:
+    src: chrony.conf.j2
+    dest: /etc/chrony/chrony.conf
+    mode: "0644"
+  notify: Restart chrony
+  when: manage_chrony | bool
+
+- name: Create the atc service account
+  ansible.builtin.user:
+    name: "{{ atc_user }}"
+    system: true
+    shell: /usr/sbin/nologin
+    home: "{{ atc_root }}"
+    create_home: true
+  when: create_atc_user | bool
