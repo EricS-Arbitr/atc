@@ -76,12 +76,14 @@ atc_tar1090_offline_tiles: true
 atc_tar1090_tiles_dir: "/usr/local/share/osm_tiles_offline"
 atc_tar1090_tiles_url: "/tar1090/osm_tiles_offline/{z}/{x}/{y}.png"
 # DEV tile source, fetched via the mgmt proxy (the hosts have no browser egress,
-# so tiles are served LOCALLY). AIR-GAP: stage this same {z}/{x}/{y}.png set to
-# Nexus and point atc_tiles_src at it. NOTE: OSM's main server BLOCKS bulk
-# caching (returns an "Access blocked" tile) — use a tolerant source for the dev
-# fetch. Carto's CDN basemaps serve real PNGs and a dark style (© OpenStreetMap
-# contributors © CARTO). Production/air-gap uses your approved Nexus tiles.
-atc_tiles_src: "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+# so tiles are served LOCALLY). AIR-GAP: stage this same {z}/{x}/{y}.png tree to
+# Nexus and point atc_tiles_src at it. NOTE on dev sources: OSM blocks bulk
+# caching ("Access blocked" tiles) and Carto's raster basemaps now require an API
+# key. ESRI World Imagery is still keyless + tolerant (satellite; © Esri, Maxar,
+# Earthstar Geographics). Its URL order is {z}/{y}/{x} and it returns JPEG — we
+# store it under the .png names tar1090 requests (browsers sniff the content).
+# Production/air-gap uses your approved Nexus tiles.
+atc_tiles_src: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
 atc_tiles_bbox: { lat_min: 37.0, lat_max: 40.0, lon_min: -80.0, lon_max: -77.0 }
 atc_tiles_zoom_min: 6
 atc_tiles_zoom_max: 11
