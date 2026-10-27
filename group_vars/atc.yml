@@ -40,7 +40,13 @@ atc_primary_radar_enabled: false  # optional independent feed for cross-check de
 # --- readsb (design §4B) ----------------------------------------------------
 # Pinned .deb from Nexus ng_raw for air-gap; dev may install from a staged
 # .deb. readsb runs network-only (no SDR), pulling the local Beast feed.
-atc_readsb_deb_url: ""            # set to the ng_raw .deb URL once staged
+# Sourcing: DEV installs readsb from upstream over the internet (range has
+# egress); AIR-GAP installs a pinned .deb from Nexus ng_raw. Flip the method
+# and set the .deb URL for air-gapped ranges. Either way Ansible owns
+# /etc/default/readsb — no community script decides config.
+atc_readsb_install_method: "upstream_script"   # upstream_script (dev) | nexus_deb (air-gap)
+atc_readsb_install_url: "https://github.com/wiedehopf/adsb-scripts/raw/master/readsb-install.sh"
+atc_readsb_deb_url: ""            # air-gap: the ng_raw .deb URL once staged
 # Interim: the feed stub emits SBS on :30003, so readsb ingests sbs_in. TARGET
 # once the feed emits Beast DF17: "127.0.0.1,{{ atc_feed_beast_port }},beast_in".
 atc_readsb_net_connector: "127.0.0.1,{{ atc_feed_sbs_port }},sbs_in"

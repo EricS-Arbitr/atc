@@ -22,7 +22,7 @@ owner decisions → design doc → this file → per-role TODOs.
   commit the tarball with every change** (`./build_tarball.sh`).
 - Blueprint `download-range-vars-script` wgets the tarball through the mgmt
   proxy `10.255.240.1:3128`; pin it to a commit SHA (branch URLs are
-  CDN-cached). The URL is a PLACEHOLDER until this repo has a GitHub remote.
+  CDN-cached). Repo: `github.com/EricS-Arbitr/atc`.
 - `site.yml` imports phases in order: `00-base` → `10-radar` → `20-weather`
   → `30-cwp`. `deploy.sh` runs up to 3 attempts (attempt 3 confirms).
 - **Reset is a SEPARATE playbook** (`playbooks/reset-atc.yml`), never in the
@@ -36,6 +36,10 @@ owner decisions → design doc → this file → per-role TODOs.
    Dev range has egress; **validate the air-gap path** before "done".
    - apt → `jammy` dist (ATC hosts are 22.04); pip → `ng_pypi`
      (`atc_pip_index_url`); tarballs/.deb/tiles → `ng_raw`.
+   - **Explicit dev exception:** readsb installs from upstream over the
+     internet (`atc_readsb_install_method: upstream_script`) while iterating;
+     air-gap flips to `nexus_deb` + a pinned `ng_raw` .deb. Ansible writes
+     `/etc/default/readsb` in both paths — never a community script's config.
 2. **`group_vars`/`host_vars` are the single source of truth.** No hardcoded
    IPs/creds in tasks/templates. The ATC centerpiece is `group_vars/atc.yml`
    (airfield params, epoch clock, feed/ports, feature toggles).

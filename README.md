@@ -29,9 +29,9 @@ for name resolution.
 ./deploy.sh                 # galaxy install + site.yml (3-attempt retry)
 ```
 
-The blueprint's `download-range-vars-script` wgets `atc_dev.tgz` through the
-mgmt proxy. **Update that URL + pin a commit SHA** once this repo has a remote
-(it is a PLACEHOLDER today — see the blueprint header).
+The blueprint's `download-range-vars-script` wgets `atc_dev.tgz` from
+`github.com/EricS-Arbitr/atc` (pinned to a commit SHA — branch URLs are
+CDN-cached) through the mgmt proxy. Re-pin the SHA whenever the tarball changes.
 
 ## Build phases & current status
 
@@ -39,7 +39,7 @@ mgmt proxy. **Update that URL + pin a commit SHA** once this repo has a remote
 |---|---|---|
 | P0 | base (common: hostname, /etc/hosts, proxy, chrony) | **scaffolded, works** |
 | P1 | ADS-B feed engine (`atc_inject`) | **working stub** — SBS emit; Beast DF17 = TODO |
-| P2 | readsb ingest (`atc_core/readsb`) | **blocked on a staged readsb .deb** (`atc_readsb_deb_url`) |
+| P2 | readsb ingest (`atc_core/readsb`) | **dev: upstream install** (wiedehopf); air-gap toggles to a pinned ng_raw .deb |
 | P3 | tar1090 offline (`atc_core/tar1090`) | **TODO** — vendor tar1090 + offline tiles from Nexus |
 | P4 | FDP strips + landing detection (`atc_core/fdp`) | **working stub** — strips from aircraft.json; landing/fuel = TODO |
 | P5 | CWP kiosk (`atc_cwp`) | **scaffolded** — .deb browser pin = TODO |
