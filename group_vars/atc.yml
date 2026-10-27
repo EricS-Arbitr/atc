@@ -52,9 +52,9 @@ atc_primary_radar_enabled: false  # optional independent feed for cross-check de
 atc_readsb_install_method: "upstream_script"   # upstream_script (dev) | nexus_deb (air-gap)
 atc_readsb_install_url: "https://github.com/wiedehopf/adsb-scripts/raw/master/readsb-install.sh"
 atc_readsb_deb_url: ""            # air-gap: the ng_raw .deb URL once staged
-# Interim: the feed stub emits SBS on :30003, so readsb ingests sbs_in. TARGET
-# once the feed emits Beast DF17: "127.0.0.1,{{ atc_feed_beast_port }},beast_in".
-atc_readsb_net_connector: "127.0.0.1,{{ atc_feed_sbs_port }},sbs_in"
+# The feed emits Beast DF17 on :30005 (+ SBS on :30003 for taps); readsb ingests
+# Beast. (Fallback for debugging: "127.0.0.1,{{ atc_feed_sbs_port }},sbs_in".)
+atc_readsb_net_connector: "127.0.0.1,{{ atc_feed_beast_port }},beast_in"
 atc_readsb_disable_aircraft_db: true   # AE… hex codes must NOT map to real airframes
 
 # --- tar1090 (design §4B) ---------------------------------------------------
