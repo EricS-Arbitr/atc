@@ -160,6 +160,86 @@ def active_runway(wind_dir, airfield):
     return min(ends, key=lambda e: _angdiff(e[1], wind_dir))[0]
 
 
+# --- D-ATIS (plain-language text; no audio in the range) --------------------
+_PHON = {"A": "ALPHA", "B": "BRAVO", "C": "CHARLIE", "D": "DELTA", "E": "ECHO",
+         "F": "FOXTROT", "G": "GOLF", "H": "HOTEL", "I": "INDIA", "J": "JULIET",
+         "K": "KILO", "L": "LIMA", "M": "MIKE", "N": "NOVEMBER", "O": "OSCAR",
+         "P": "PAPA", "Q": "QUEBEC", "R": "ROMEO", "S": "SIERRA", "T": "TANGO",
+         "U": "UNIFORM", "V": "VICTOR", "W": "WHISKEY", "X": "XRAY",
+         "Y": "YANKEE", "Z": "ZULU"}
+_COVER = {"FEW": "FEW", "SCT": "SCATTERED", "BKN": "BROKEN", "OVC": "OVERCAST",
+          "VV": "INDEFINITE CEILING"}
+_WXWORD = {"RA": "RAIN", "SN": "SNOW", "DZ": "DRIZZLE", "BR": "MIST", "FG": "FOG",
+           "HZ": "HAZE", "FU": "SMOKE", "GR": "HAIL", "GS": "SMALL HAIL",
+           "PL": "ICE PELLETS", "SG": "SNOW GRAINS", "UP": "UNKNOWN PRECIP"}
+_WXDESC = {"SH": "SHOWERS", "TS": "THUNDERSTORM", "FZ": "FREEZING",
+           "MI": "SHALLOW", "BC": "PATCHY", "BL": "BLOWING", "DR": "DRIFTING"}
+
+
+def _spoken_wx(wx):
+    out = []
+    for tok in wx.split():
+        pre, t = "", tok
+        if t[:1] == "+":
+            pre, t = "HEAVY ", t[1:]
+        elif t[:1] == "-":
+            pre, t = "LIGHT ", t[1:]
+        elif t[:2] == "VC":
+            pre, t = "VICINITY ", t[2:]
+        words = [_WXWORD.get(t[i:i + 2], _WXDESC.get(t[i:i + 2], t[i:i + 2]))
+                 for i in range(0, len(t), 2)]
+        out.append((pre + " ".join(words)).strip())
+    return ", ".join(out)
+
+
+def _spoken_sky(sky):
+    if not sky:
+        return "SKY CLEAR"
+    segs, ceiling_done = [], False
+    for lyr in sky:
+        word = _COVER.get(lyr["cover"], lyr["cover"])
+        if lyr["cover"] in ("BKN", "OVC", "VV") and not ceiling_done:
+            segs.append("CEILING %d %s" % (lyr["ft"], word))
+            ceiling_done = True
+        else:
+            segs.append("%d %s" % (lyr["ft"], word))
+    return ", ".join(segs)
+
+
+def datis_text(d, letter, active_rwy, field_name, raw):
+    """Assemble D-ATIS phraseology from the decoded METAR + active runway."""
+    word = _PHON.get(letter, letter)
+    m = re.search(r"\b\d{2}(\d{2})(\d{2})Z\b", raw)
+    zt = ("%s%sZ" % (m.group(1), m.group(2))) if m else ""
+    if d["wind_spd"] == 0:
+        wind = "WIND CALM"
+    elif d["wind_dir"] is None:
+        wind = "WIND VARIABLE AT %d" % d["wind_spd"]
+    else:
+        wind = "WIND %03d AT %d" % (d["wind_dir"], d["wind_spd"])
+        if d["wind_gust"]:
+            wind += " GUST %d" % d["wind_gust"]
+    vis = "VISIBILITY %s" % d["vis_txt"].replace("SM", "").strip() if d["vis_txt"] else ""
+    if d["wx"]:
+        vis += ", " + _spoken_wx(d["wx"])
+
+    def _t(v):
+        return ("MINUS %d" % abs(v)) if v is not None and v < 0 else str(v)
+
+    temp = "TEMPERATURE %s, DEWPOINT %s" % (_t(d["temp"]), _t(d["dew"]))
+    altim = "ALTIMETER %04d" % int(round((d["altimeter"] or 0) * 100))
+    rwy = "LANDING AND DEPARTING RUNWAY %s." % active_rwy if active_rwy else ""
+    lines = [
+        "%s ATIS INFORMATION %s. %s." % (field_name.upper(), word, zt),
+        "%s. %s." % (wind, vis),
+        "%s." % _spoken_sky(d["sky"]),
+        "%s. %s." % (temp, altim),
+        rwy,
+        "ADVISE ON INITIAL CONTACT YOU HAVE INFORMATION %s." % word,
+    ]
+    return "\n".join(ln for ln in lines if ln.strip())
+
+
 # --- weather proxy (server-side, short-cached, last-good on failure) --------
 def _get_json(url):
     with urllib.request.urlopen(url, timeout=1.5) as r:
@@ -170,16 +250,20 @@ def weather():
     now = time.time()
     if _WX["data"] and now - _WX["t"] < 10:
         return _WX["data"]
-    out = {"ok": False, "raw": "", "taf": "", "atis": "", "decoded": None,
-           "active_rwy": "", "stale": _WX["data"] is not None}
+    out = {"ok": False, "raw": "", "taf": "", "atis": "", "datis": "",
+           "decoded": None, "active_rwy": "", "stale": _WX["data"] is not None}
     try:
         m = _get_json(CFG.get("weather_metar_url", ""))
         out["raw"] = m.get("raw", "")
         out["atis"] = m.get("atis", "")
         out["decoded"] = decode_metar(out["raw"]) if out["raw"] else None
         if out["decoded"]:
-            out["active_rwy"] = active_runway(out["decoded"]["wind_dir"],
-                                              CFG.get("airfield", {}))
+            af = CFG.get("airfield", {})
+            out["active_rwy"] = active_runway(out["decoded"]["wind_dir"], af)
+            out["datis"] = datis_text(out["decoded"], out["atis"],
+                                      out["active_rwy"],
+                                      af.get("name", af.get("ident_icao", "")),
+                                      out["raw"])
         try:
             out["taf"] = _get_json(CFG.get("weather_taf_url", "")).get("raw", "")
         except Exception:
@@ -215,6 +299,7 @@ OPS_PAGE = """<!doctype html><html><head><meta charset="utf-8">
     padding:10px 12px;max-height:40%;overflow:auto}
 h2{color:var(--hdr);margin:0 0 8px;font-size:15px}
 table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid var(--line);padding:4px;text-align:left}
+.datis{color:#e6eefc;white-space:pre-wrap;word-break:break-word;margin:2px 0 8px;line-height:1.35}
 .raw{color:#9fe0b0;word-break:break-word;margin:4px 0}
 .taf{color:#9db9e0;word-break:break-word;white-space:pre-wrap;margin:2px 0}
 .k{color:var(--dim)}
@@ -242,7 +327,8 @@ table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid var(--li
       <tbody id="strips"></tbody></table>
       <p id="foot" class="k">loading…</p></div>
     <div class="wxbox"><h2>WEATHER — {{ af.ident_icao }} <span id="wxflag"></span></h2>
-      <div class="raw" id="metar">METAR unavailable</div>
+      <div class="k">D-ATIS</div><div class="datis" id="datis">—</div>
+      <div class="k">METAR</div><div class="raw" id="metar">METAR unavailable</div>
       <div class="k">TAF</div><div class="taf" id="taf">—</div></div>
   </div>
 </div>
@@ -272,6 +358,7 @@ async function wx(){
     const cat = document.getElementById('cat');
     cat.textContent = d.cat || '–';
     cat.className = 'val cat ' + (d.cat||'');
+    txt('datis', w.datis || '—');
     txt('metar', w.raw || 'METAR unavailable');
     txt('taf', w.taf || '—');
     const flag = document.getElementById('wxflag');
@@ -317,7 +404,7 @@ def main():
     ap.add_argument("--selftest", action="store_true")
     a = ap.parse_args()
     if a.selftest:
-        af = {"ident_icao": "KBAX",
+        af = {"ident_icao": "KBAX", "name": "Blackstone Aux",
               "runways": [{"ident": "02/20", "true_hdg": 20},
                           {"ident": "11/29", "true_hdg": 110}]}
         samples = [
@@ -328,10 +415,13 @@ def main():
         ]
         for s in samples:
             d = decode_metar(s)
-            print("%-5s rwy%s  %-14s vis=%-7s ceil=%-7s %s/%s %.2f  <- %s"
-                  % (d["cat"], active_runway(d["wind_dir"], af), d["wind_txt"],
-                     d["vis_txt"], ("%dft" % d["ceiling"]) if d["ceiling"] else "none",
-                     d["temp"], d["dew"], d["altimeter"], s.split(" RMK")[0]))
+            rwy = active_runway(d["wind_dir"], af)
+            print("%-5s rwy%s  %-14s vis=%-7s ceil=%-7s %s/%s %.2f"
+                  % (d["cat"], rwy, d["wind_txt"], d["vis_txt"],
+                     ("%dft" % d["ceiling"]) if d["ceiling"] else "none",
+                     d["temp"], d["dew"], d["altimeter"]))
+            print(datis_text(d, "V", rwy, af["name"], s))
+            print()
         return
     CFG = json.load(open(a.config))
     serve()
