@@ -121,7 +121,7 @@ resources:
   properties:
     cwd: "/etc/ansible"
     user: "root"
-    content: "wget --no-check-certificate --no-cache -e use_proxy=yes -e https_proxy=10.255.240.1:3128 -O /etc/ansible/atc_dev.tgz https://github.com/EricS-Arbitr/atc/raw/1cc4ec3092183e5c0d4a0e9a0c1e90d8ae856842/atc_dev.tgz && tar -xvzf atc_dev.tgz\n"
+    content: "wget --no-check-certificate --no-cache -e use_proxy=yes -e https_proxy=10.255.240.1:3128 -O /etc/ansible/atc_dev.tgz https://github.com/EricS-Arbitr/atc/raw/4c6a70583ddf92acd85c570a4ce65162b7683dde/atc_dev.tgz && tar -xvzf atc_dev.tgz\n"
     scriptType: "BASH"
 - type: "range.resource.configuration.ScriptDefinition::1.0.0"
   name: "deploy-script"
