@@ -8,7 +8,8 @@ Realism:
   * Arrivals and departures are aligned to the field's runways (straight-in and
     curved base-to-final approaches, runway-heading climb-outs with a turn) — no
     random radial lines.
-  * Orbits (tanker/CAP loiter) are smooth circles, not polygons.
+  * Loiter (tanker/CAP/hold) flies a racetrack — two straight legs joined by
+    180 deg turns — not a geometric ring, and holds ~45 min then hands off.
   * Closed-pattern work is a small oval over the field at pattern altitude.
   * En-route transits pass *beside* the field, not through it.
   * Waypoint timing is speed-consistent (offset_s derived from leg distance and
@@ -72,18 +73,44 @@ def build(af, anchors, t0=0):
     return wps
 
 
-def circle(af, center_brg, center_dist, radius_nm, alt, gs, dur, t0=0, step_deg=15):
-    """Smooth circular loiter, looping for `dur` seconds."""
+def _oval_nodes(clat, clon, axis, leg, r, step_deg=20):
+    """Nodes of one holding-pattern/CAP racetrack lap: two straight legs of
+    length `leg` offset +/- r from the axis, joined by 180 deg turns of radius r."""
+    def pt(along, cross):
+        la, lo = point(clat, clon, axis, along)
+        return point(la, lo, (axis + 90) % 360, cross)
+
+    nodes = [pt(leg / 2, r), pt(-leg / 2, r)]                  # leg 1 (+r side)
+    th = 90 + step_deg                                          # turn 1 at -leg/2 end
+    while th < 270:
+        nodes.append(pt(-leg / 2 + r * math.cos(math.radians(th)),
+                        r * math.sin(math.radians(th))))
+        th += step_deg
+    nodes += [pt(-leg / 2, -r), pt(leg / 2, -r)]                # leg 2 (-r side)
+    th = 270 + step_deg                                         # turn 2 at +leg/2 end
+    while th < 450:
+        nodes.append(pt(leg / 2 + r * math.cos(math.radians(th)),
+                        r * math.sin(math.radians(th))))
+        th += step_deg
+    return nodes
+
+
+def racetrack(af, center_brg, center_dist, axis, leg, r, alt, gs, dur, t0=0):
+    """A racetrack loiter (CAP/tanker track or hold), looping for `dur` seconds.
+    Speed-consistent offset_s so the displayed motion matches gs."""
     clat, clon = point(af["lat"], af["lon"], center_brg, center_dist)
-    loop_time = (2 * math.pi * radius_nm) / max(gs, 1) * 3600.0
-    dt = loop_time * step_deg / 360.0
-    wps, t, ang = [], float(t0), 0.0
-    while t <= t0 + dur:
-        plat, plon = point(clat, clon, ang % 360, radius_nm)
-        wps.append({"lat": plat, "lon": plon, "alt_ft": int(alt),
+    nodes = _oval_nodes(clat, clon, axis, leg, r)
+    nodes.append(nodes[0])                                      # close the loop
+    wps, t, prev, i, end = [], float(t0), None, 0, t0 + dur
+    while t <= end:
+        n = nodes[i % len(nodes)]
+        if prev is not None:
+            t += dist_nm(prev, n) / max(gs, 1) * 3600.0
+            if t > end:
+                break
+        wps.append({"lat": n[0], "lon": n[1], "alt_ft": int(alt),
                     "gs_kt": int(gs), "offset_s": int(round(t)), "on_ground": False})
-        t += dt
-        ang += step_deg
+        prev, i = n, i + 1
     return wps
 
 
@@ -157,10 +184,11 @@ def make(af, n, t0, kind, H, dur=0):
                {"lat": p1[0], "lon": p1[1], "alt_ft": a, "gs_kt": g,
                 "offset_s": int(dist_nm(p0, p1) / g * 3600), "on_ground": False}]
         rule = "local"
-    else:  # orbit
+    else:  # orbit — a racetrack loiter (CAP/tanker track), not a geometric ring
         ac = rng.choice(LOITER)
-        wps = circle(af, rng.uniform(0, 360), rng.uniform(12, 18), rng.uniform(5, 8),
-                     rng.choice([20000, 24000, 27000]), ac[5] - 40, dur)
+        wps = racetrack(af, rng.uniform(0, 360), rng.uniform(10, 16),
+                        rng.uniform(0, 360), rng.uniform(6, 11), rng.uniform(2.2, 3.6),
+                        rng.choice([20000, 24000, 27000]), ac[5] - 40, dur)
         rule = "local"
 
     fl = {"callsign": _callsign(ac[4]), "icao_hex": f"AE{n:04X}", "squawk": _squawk(),
@@ -194,8 +222,8 @@ def main():
     ap.add_argument("--airfield", default=os.path.join(here, "airfield.yml"))
     ap.add_argument("--cycle", type=int, default=172800)
     ap.add_argument("--seed", type=int, default=20260101)
-    ap.add_argument("--interval", type=int, default=1800, help="mean s between movements")
-    ap.add_argument("--orbit-shift", type=int, default=12600, help="orbit shift length (s)")
+    ap.add_argument("--interval", type=int, default=1200, help="mean s between movements")
+    ap.add_argument("--orbit-dur", type=int, default=2700, help="how long each loiter holds (s)")
     ap.add_argument("--out", default=os.path.join(here, "schedule.json"))
     a = ap.parse_args()
     rng = random.Random(a.seed)
@@ -212,13 +240,16 @@ def main():
     active = rng.choice(rwys)
 
     flights, n = [], 1
-    # orbit shifts tile the cycle -> always >=1 ambient aircraft
+    # Loiter racetracks tile the cycle so there is always >=1 ambient target, but
+    # each holds only ~45 min and a fresh one starts before the last departs
+    # (slight overlap = a believable on-station handoff), with varied
+    # track/altitude so it is never the same ring parked overhead for hours.
     t = 0
     while t < a.cycle:
-        dur = min(a.orbit_shift, a.cycle - t)
-        if dur >= 1800:
+        dur = min(a.orbit_dur, a.cycle - t)
+        if dur >= 1200:
             flights.append(make(af, n, t, "orbit", active, dur)); n += 1
-        t += a.orbit_shift
+        t += int(a.orbit_dur * rng.uniform(0.75, 0.95))
 
     # discrete movements, runway-aligned (mostly the active runway)
     t = 0
@@ -245,7 +276,21 @@ def _mini_airfield(path):
         if not s.strip() or s.strip() == "airfield:":
             continue
         if s.lstrip().startswith("- {"):
-            af.setdefault("runways", []).append(eval(s.lstrip()[2:], {"__builtins__": {}}))
+            body = s.lstrip()[3:].rstrip().rstrip("}")        # inside the { }
+            d = {}
+            for pair in body.split(","):
+                if ":" not in pair:
+                    continue
+                k, v = [x.strip() for x in pair.split(":", 1)]
+                v = v.strip().strip('"').strip("'")
+                for cast in (int, float):
+                    try:
+                        v = cast(v)
+                        break
+                    except ValueError:
+                        pass
+                d[k] = v
+            af.setdefault("runways", []).append(d)
             continue
         if ":" in s:
             k, v = [x.strip() for x in s.split(":", 1)]
