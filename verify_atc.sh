@@ -50,6 +50,8 @@ chk "tar1090 served"     atc-radar "wget -qO- http://localhost/tar1090/ | grep -
 
 echo "-- weather --"
 chk "weather METAR"      atc-weather "wget -qO- http://localhost:$WX/metar | grep -q station"
+chk "weather TAF"        atc-weather "wget -qO- http://localhost:$WX/taf | grep -q TAF"
+chk "FDP weather proxy"  atc-radar   "wget -qO- http://localhost:$FDP/api/weather | grep -q '\"ok\": true'"
 
 echo "-- cross-host (prod subnet) --"
 chk "prod subnet route"  atc-station "ip route | grep -q 172.31.5.0/24"
@@ -63,7 +65,8 @@ chk "browser present"    atc-station "command -v firefox"
 echo
 echo "===== $pass passed, $fail failed ====="
 echo "Displays (open on atc-station's console):"
-echo "  CWP / FDP ops page : http://$RADAR_IP:$FDP/   (radar iframe + flight strips)"
+echo "  CWP / FDP ops page : http://$RADAR_IP:$FDP/   (IDS weather band + radar + strips)"
 echo "  tar1090 scope only : http://$RADAR_IP/tar1090/"
 echo "  Weather METAR JSON : http://$WX_IP:$WX/metar"
+echo "  Weather TAF  JSON  : http://$WX_IP:$WX/taf"
 [ "$fail" -eq 0 ]

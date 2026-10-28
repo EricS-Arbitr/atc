@@ -6,6 +6,7 @@
   "vulns_enabled": {{ atc_vulns_enabled | lower }},
   "fuel_requisition_enabled": {{ atc_fuel_requisition_enabled | lower }},
   "fuel_requisition_url": "{{ atc_fuel_requisition_url }}",
-  "weather_url": "{{ atc_weather_protocol }}://{{ atc_weather_ip }}:{{ atc_weather_port }}/metar",
+  "weather_metar_url": "{{ atc_weather_protocol }}://{{ atc_weather_ip }}:{{ atc_weather_port }}/metar",
+  "weather_taf_url": "{{ atc_weather_protocol }}://{{ atc_weather_ip }}:{{ atc_weather_port }}/taf",
   "airfield": {{ atc_airfield | to_json }}
 }

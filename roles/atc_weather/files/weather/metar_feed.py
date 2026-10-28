@@ -219,9 +219,20 @@ def _cpos():
     return (_now_ts() - EPOCH_TS) % cyc, cyc
 
 
+def atis_at(cpos):
+    """ATIS phonetic letter. Routine observations are hourly, so the ATIS code
+    advances each hour and wraps A..Z — 'Information Quebec', etc."""
+    return chr(ord("A") + (int(cpos // 3600) % 26))
+
+
 def current_metar():
     cpos, cyc = _cpos()
     return metar_at(cpos, cyc, CFG.get("station", "KBAX"))
+
+
+def current_atis():
+    cpos, _ = _cpos()
+    return atis_at(cpos)
 
 
 def current_taf():
@@ -236,7 +247,8 @@ def serve():
 
     @app.route("/metar")
     def metar():
-        return jsonify(station=CFG.get("station"), raw=current_metar())
+        return jsonify(station=CFG.get("station"), raw=current_metar(),
+                       atis=current_atis())
 
     @app.route("/taf")
     def taf():
