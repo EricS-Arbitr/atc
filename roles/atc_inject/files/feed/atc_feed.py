@@ -196,6 +196,7 @@ def run(cfg):
     cycle = cfg["cycle_seconds"]
     flights = json.load(open(cfg["schedule"]))["flights"]
     period = 1.0 / max(cfg.get("rate_hz", 1), 1)
+    field_elev = cfg.get("airfield", {}).get("field_elev_ft", 0)
 
     bsrv = Server(cfg["bind"], cfg["beast_port"])
     ssrv = Server(cfg["bind"], cfg["sbs_port"])
@@ -217,6 +218,7 @@ def run(cfg):
             ahead = _interp(wps, t + 1) or p
             track = _bearing(p, ahead) if ahead is not p else 0.0
             gs, alt = p["gs_kt"], p["alt_ft"]
+            on_gnd = "1" if alt <= field_elev + 100 else "0"
 
             # identification every 5s
             if tick % 5 == 0:
@@ -230,8 +232,7 @@ def run(cfg):
             # SBS mirrors (position + velocity)
             ssrv.send(_sbs(3, hx, ["", str(int(alt)), "", "",
                                    f"{p['lat']:.5f}", f"{p['lon']:.5f}",
-                                   "", fl.get("squawk", ""), "", "", "",
-                                   "1" if alt <= wps[0]["alt_ft"] + 50 else "0"]))
+                                   "", fl.get("squawk", ""), "", "", "", on_gnd]))
             ssrv.send(_sbs(4, hx, ["", "", str(int(gs)), f"{int(track)}",
                                    "", "", "", "", "", "", "", ""]))
         tick += 1
